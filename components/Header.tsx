@@ -16,11 +16,12 @@ export default function Header() {
       <div className="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
         <Link href="/">
           <Image
-            src="/LOGO ASSYSTUNPT.png"
+            src="/logo-assystu.png"
             alt="ASSYSTU"
             width={200}
             height={37}
             priority
+            unoptimized
           />
         </Link>
         <div className="hidden md:flex gap-8 items-center">
@@ -43,7 +44,7 @@ export default function Header() {
         </div>
         <Link
           href="/contacto"
-          className="bg-editorial-gradient text-on-primary px-6 py-2.5 rounded-xl font-body font-semibold text-sm hover:opacity-90 transition-opacity shadow-sm"
+          className="bg-editorial-gradient text-white px-6 py-2.5 rounded-xl font-body font-semibold text-sm hover:opacity-90 transition-opacity shadow-sm"
         >
           Agendar diagnóstico
         </Link>

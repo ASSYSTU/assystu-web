@@ -7,10 +7,11 @@ export default function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
         <div className="flex flex-col gap-4">
           <Image
-            src="/LOGO ASSYSTUNPT.png"
+            src="/logo-assystu.png"
             alt="ASSYSTU"
             width={160}
             height={30}
+            unoptimized
           />
           <p className="font-body text-sm uppercase tracking-widest text-on-surface-variant">
             © 2026 ASSYSTU. Todos los derechos reservados.

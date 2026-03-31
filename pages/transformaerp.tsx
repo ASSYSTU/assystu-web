@@ -27,7 +27,7 @@ export default function TransformaERP() {
                   Mentoría para mejorar la operación y el uso real de tu ERP, sin depender de consultoría tradicional.
                 </p>
                 <div className="flex gap-4">
-                  <Link href="/contacto" className="bg-editorial-gradient text-on-primary px-8 py-4 rounded-xl font-bold transition-all hover:opacity-90 shadow-lg">
+                  <Link href="/contacto" className="bg-editorial-gradient text-white px-8 py-4 rounded-xl font-bold transition-all hover:opacity-90 shadow-lg">
                     Agendar diagnóstico
                   </Link>
                 </div>
@@ -60,7 +60,7 @@ export default function TransformaERP() {
             <div className="max-w-7xl mx-auto">
               <div className="editorial-grid mb-24">
                 <div className="col-span-12 md:col-span-5">
-                  <h2 className="font-headline text-5xl font-bold text-primary mb-6">Transformar ERP</h2>
+                  <h2 className="font-headline text-5xl font-bold text-primary mb-6">TransformaERP</h2>
                   <p className="text-on-surface-variant text-lg leading-relaxed">
                     No es necesario cambiar de software para cambiar de realidad. Nuestra metodología se enfoca en el &ldquo;last mile&rdquo; de la ejecución operativa.
                   </p>
@@ -157,19 +157,22 @@ export default function TransformaERP() {
           <section className="py-24 px-8 bg-surface">
             <div className="max-w-4xl mx-auto">
               <h2 className="font-headline text-4xl font-bold text-primary mb-12 text-center">Preguntas Frecuentes</h2>
-              <div className="space-y-4">
+              <div className="-space-y-px">
                 {[
                   { q: "¿Es necesario cambiar de ERP para mejorar la operación?", a: "Generalmente no. Nuestro enfoque es maximizar el valor de la infraestructura actual. La transformación ocurre en los procesos, roles y hábitos, no en el software." },
                   { q: "¿Cuánto tiempo para ver resultados?", a: "Los primeros ajustes de procesos y visibilidad de datos suelen reflejarse entre las 4 y 8 semanas tras el inicio del diagnóstico." },
                   { q: "¿Funciona para cualquier ERP?", a: "Sí. El método TransformaERP es ERP-agnóstico: funciona con SAP, Oracle, Microsoft Dynamics, Softland, y otros sistemas. El foco es la operación, no el software específico." },
-                ].map(({ q, a }) => (
-                  <div key={q} className="p-6 bg-surface-container-low rounded-xl">
-                    <div className="flex justify-between items-center">
-                      <h4 className="font-bold text-primary">{q}</h4>
-                      <span className="material-symbols-outlined flex-shrink-0 ml-4">add</span>
-                    </div>
-                    <div className="mt-4 text-on-surface-variant text-sm leading-relaxed">{a}</div>
-                  </div>
+                ].map(({ q, a }, i, arr) => (
+                  <details
+                    key={q}
+                    className={`group bg-surface-container-lowest border border-outline-variant/20 px-6 py-5 cursor-pointer ${i === 0 ? "rounded-t-xl" : ""} ${i === arr.length - 1 ? "rounded-b-xl" : ""}`}
+                  >
+                    <summary className="font-bold text-primary flex justify-between items-center list-none gap-4">
+                      {q}
+                      <span className="material-symbols-outlined flex-shrink-0 text-on-surface-variant transition-transform group-open:rotate-45">add</span>
+                    </summary>
+                    <p className="mt-4 text-on-surface-variant text-sm leading-relaxed">{a}</p>
+                  </details>
                 ))}
               </div>
             </div>

@@ -9,31 +9,24 @@ const capas = [
     title: "Blueprint Happy Brain",
     desc: "Sesión de trabajo estructurada con output: plan implementable de 30 días.",
     items: ["Backlog de 30 días (8–15 acciones)", "Ritmo semanal mínimo + responsables", "Estructura base del hub (Happy Brain)"],
-    pricing: [
-      { label: "Chile", value: "USD 450 (CLP 450.000)" },
-      { label: "LATAM premium", value: "USD 650 (CLP 650.000)" },
-    ],
+    price: "USD 450",
+    priceNote: "CLP 450.000",
   },
   {
     num: "02",
     title: "Mentoring 4W",
     desc: "Acompañamiento para que quede hecho y usado.",
     items: ["Menos \"intención\", más implementación", "Ajustes finos semana a semana", "Evidencia y cierre real de pendientes"],
-    pricing: [
-      { label: "Chile", value: "USD 1.200 (CLP 1.200.000)" },
-      { label: "LATAM premium", value: "USD 1.800 (CLP 1.800.000)" },
-    ],
+    price: "USD 1.200",
+    priceNote: "CLP 1.200.000",
   },
   {
     num: "03",
     title: "Mentoring 6M",
     desc: "Madurez y sostenibilidad: delegación, estándares, ritmos, SOPs y auditoría.",
     items: ["Operación que se sostiene sin sobrecarga", "Roles claros y delegación", "Mejora continua (sin reinventar la rueda)"],
-    pricing: [
-      { label: "Chile Standard / mes", value: "USD 1.500 (CLP 1.500.000)" },
-      { label: "LATAM Standard / mes", value: "USD 2.200 (CLP 2.200.000)" },
-      { label: "Premium", value: "+30–40%" },
-    ],
+    price: "USD 1.500",
+    priceNote: "CLP 1.500.000 / mes",
   },
 ];
 
@@ -59,7 +52,7 @@ export default function HappyBrain() {
                 Happy Brain no es una herramienta; es la arquitectura que permite externalizar tu conocimiento, procesos y decisiones en una estructura líquida y escalable.
               </p>
               <div className="flex flex-col md:flex-row gap-4">
-                <Link href="/contacto" className="bg-editorial-gradient text-on-primary px-8 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                <Link href="/contacto" className="bg-editorial-gradient text-white px-8 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition-all flex items-center justify-center gap-2">
                   Agendar diagnóstico <span className="material-symbols-outlined">arrow_forward</span>
                 </Link>
                 <Link href="#capas" className="bg-surface-container-highest text-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-surface-container-high transition-all text-center">
@@ -112,26 +105,29 @@ export default function HappyBrain() {
           {/* ── Las 3 Capas ── */}
           <section id="capas" className="py-32 px-8 max-w-7xl mx-auto">
             <h2 className="font-headline text-5xl font-bold text-primary text-center mb-24">La Arquitectura de 3 Capas</h2>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-              {capas.map(({ num, title, desc, items, pricing }) => (
-                <div key={num} className="flex flex-col">
-                  <div className="text-8xl font-headline italic text-surface-variant font-black mb-[-2rem] z-0">{num}</div>
-                  <div className="relative z-10 pt-8 flex flex-col flex-1">
-                    <h3 className="font-headline text-3xl font-bold text-primary mb-4">{title}</h3>
-                    <p className="text-on-surface-variant leading-relaxed mb-6">{desc}</p>
-                    <div className="h-1 w-20 bg-on-tertiary-container mb-6" />
-                    <ul className="space-y-2 text-sm font-label text-on-surface-variant mb-8">
-                      {items.map((item) => <li key={item}>&middot; {item}</li>)}
-                    </ul>
-                    <div className="mt-auto space-y-2 border-t border-outline-variant/30 pt-6">
-                      {pricing.map(({ label, value }) => (
-                        <div key={label} className="flex justify-between text-sm">
-                          <span className="text-on-surface-variant">{label}</span>
-                          <span className="font-semibold text-primary">{value}</span>
-                        </div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {capas.map(({ num, title, desc, items, price, priceNote }) => (
+                <div key={num} className="flex flex-col rounded-2xl border border-outline-variant/20 bg-gradient-to-br from-surface-container/60 to-surface-container-lowest/30 backdrop-blur-sm shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+                  <div className="px-8 pt-8 pb-0">
+                    <span className="text-7xl font-headline italic text-outline-variant/40 font-black leading-none block mb-2">{num}</span>
+                    <h3 className="font-headline text-2xl font-bold text-primary mb-3">{title}</h3>
+                    <p className="text-on-surface-variant text-sm leading-relaxed mb-6">{desc}</p>
+                    <div className="h-px w-full bg-outline-variant/30 mb-6" />
+                    <ul className="space-y-3 mb-8">
+                      {items.map((item) => (
+                        <li key={item} className="flex items-start gap-2 text-sm text-on-surface-variant">
+                          <span className="material-symbols-outlined text-on-tertiary-container text-base flex-shrink-0 mt-0.5">check</span>
+                          {item}
+                        </li>
                       ))}
+                    </ul>
+                  </div>
+                  <div className="mt-auto px-8 pb-8">
+                    <div className="bg-surface-container-lowest rounded-xl p-4 mb-6">
+                      <span className="font-headline text-3xl font-bold text-primary">{price}</span>
+                      <span className="text-on-surface-variant text-sm ml-2">{priceNote}</span>
                     </div>
-                    <Link href="/contacto" className="mt-6 block text-center bg-editorial-gradient text-on-primary px-6 py-3 rounded-xl font-bold hover:opacity-90 transition-opacity">
+                    <Link href="/contacto" className="block text-center bg-editorial-gradient text-white px-6 py-3 rounded-xl font-bold hover:opacity-90 transition-opacity">
                       Agendar diagnóstico
                     </Link>
                   </div>
@@ -194,7 +190,7 @@ export default function HappyBrain() {
               <h2 className="font-headline text-5xl font-bold mb-8 relative z-10">Si quieres salir del modo incendio, partamos por el diagnóstico</h2>
               <p className="text-xl opacity-90 mb-12 max-w-2xl mx-auto relative z-10">Agenda una sesión de 30 minutos donde evaluaremos tu arquitectura de información actual sin compromiso.</p>
               <div className="flex flex-col md:flex-row justify-center gap-6 relative z-10">
-                <Link href="/contacto" className="bg-on-tertiary-container text-white px-10 py-5 rounded-xl font-bold text-xl hover:scale-105 transition-transform inline-block">
+                <Link href="/contacto" className="bg-on-tertiary-container text-white px-10 py-5 rounded-xl font-bold text-xl hover:scale-105 transition-transform inline-block text-white">
                   Agendar diagnóstico
                 </Link>
               </div>

@@ -38,7 +38,7 @@ export default function Home() {
                   ))}
                 </ul>
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <Link href="/contacto" className="bg-editorial-gradient text-on-primary px-10 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                  <Link href="/contacto" className="bg-editorial-gradient text-white px-10 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition-all flex items-center justify-center gap-2">
                     Agendar diagnóstico
                     <span className="material-symbols-outlined">arrow_forward</span>
                   </Link>
@@ -90,7 +90,7 @@ export default function Home() {
           <section className="py-24 px-8">
             <div className="max-w-4xl mx-auto text-center space-y-12">
               <span className="font-label text-sm uppercase tracking-widest text-on-tertiary-container font-bold">La Transformación</span>
-              <h2 className="font-headline text-5xl md:text-7xl font-bold text-primary leading-tight">Claridad operacional absoluta.</h2>
+              <h2 className="font-headline text-5xl md:text-7xl font-bold text-primary leading-tight">Claridad operacional <span className="italic text-on-tertiary-container">absoluta.</span></h2>
               <p className="text-2xl text-on-surface-variant leading-relaxed">
                 Instalamos un <strong>sistema semanal sostenible</strong> que actúa como el HUB central de tu negocio. Pasamos de la improvisación al rigor de un método probado: <strong>Happy Brain</strong>.
               </p>

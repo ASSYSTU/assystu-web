@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -13,8 +14,14 @@ export default function Header() {
   return (
     <nav className="fixed top-0 w-full z-50 bg-surface-container-lowest">
       <div className="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-        <Link href="/" className="text-2xl font-black text-primary tracking-tighter font-body">
-          ASSYSTU
+        <Link href="/">
+          <Image
+            src="/LOGO ASSYSTUNPT.png"
+            alt="ASSYSTU"
+            width={200}
+            height={37}
+            priority
+          />
         </Link>
         <div className="hidden md:flex gap-8 items-center">
           {navLinks.map(({ href, label }) => {

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -5,7 +6,12 @@ export default function Footer() {
     <footer className="w-full py-12 px-8 bg-surface-container-low">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
         <div className="flex flex-col gap-4">
-          <div className="text-xl font-bold text-primary font-body">ASSYSTU</div>
+          <Image
+            src="/LOGO ASSYSTUNPT.png"
+            alt="ASSYSTU"
+            width={160}
+            height={30}
+          />
           <p className="font-body text-sm uppercase tracking-widest text-on-surface-variant">
             © 2026 ASSYSTU. Todos los derechos reservados.
           </p>

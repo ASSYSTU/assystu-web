@@ -4,3 +4,102 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# ─── Canonical domain ────────────────────────────────────────────────────────
+# Fuerza todo el tráfico a www.assystu.com (apex + variantes .cl)
+
+[[redirects]]
+  from   = "https://assystu.com/*"
+  to     = "https://www.assystu.com/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "https://assystu.cl/*"
+  to     = "https://www.assystu.com/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "https://www.assystu.cl/*"
+  to     = "https://www.assystu.com/:splat"
+  status = 301
+  force  = true
+
+# ─── WordPress legacy → v1 (301) ─────────────────────────────────────────────
+
+[[redirects]]
+  from   = "/contactanos/"
+  to     = "/contacto"
+  status = 301
+
+[[redirects]]
+  from   = "/nuestros-servicios/"
+  to     = "/transformaerp"
+  status = 301
+
+[[redirects]]
+  from   = "/nuestros-servicios/consultoria/"
+  to     = "/transformaerp"
+  status = 301
+
+[[redirects]]
+  from   = "/nuestros-servicios/educacion/"
+  to     = "/transformaerp"
+  status = 301
+
+[[redirects]]
+  from   = "/quienes-somos/"
+  to     = "/happy-brain"
+  status = 301
+
+[[redirects]]
+  from   = "/novedades/"
+  to     = "/happy-brain"
+  status = 301
+
+[[redirects]]
+  from   = "/calendario-cursos/"
+  to     = "/transformaerp"
+  status = 301
+
+# /eventos/* sin wildcard → 404 natural (no se mapea)
+
+# ─── Rutas técnicas WordPress → 404 ──────────────────────────────────────────
+# Reglas acotadas. Sin catch-all global para no capturar rutas nuevas del sitio.
+
+[[redirects]]
+  from   = "/wp-admin"
+  to     = "/lo-sentimos"
+  status = 404
+  force  = true
+
+[[redirects]]
+  from   = "/wp-admin/*"
+  to     = "/lo-sentimos"
+  status = 404
+  force  = true
+
+[[redirects]]
+  from   = "/wp-login.php"
+  to     = "/lo-sentimos"
+  status = 404
+  force  = true
+
+[[redirects]]
+  from   = "/wp-content/*"
+  to     = "/lo-sentimos"
+  status = 404
+  force  = true
+
+[[redirects]]
+  from   = "/wp-includes/*"
+  to     = "/lo-sentimos"
+  status = 404
+  force  = true
+
+[[redirects]]
+  from   = "/xmlrpc.php"
+  to     = "/lo-sentimos"
+  status = 404
+  force  = true

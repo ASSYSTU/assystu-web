@@ -1,0 +1,76 @@
+/* No-Line Rule: sin bordes. Separación por fondo surface-lowest sobre surface. */
+
+.header {
+  background: var(--surface-lowest);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 1.0625rem;
+  color: var(--primary);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.nav {
+  display: flex;
+  gap: 1.75rem;
+  flex: 1;
+}
+
+.nav a {
+  font-size: 0.9375rem;
+  color: var(--on-surface-variant);
+  transition: color 0.15s;
+}
+
+.nav a:hover {
+  color: var(--primary);
+}
+
+.cta {
+  background: linear-gradient(135deg, var(--primary), var(--primary-container));
+  color: var(--on-primary);
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+  white-space: nowrap;
+}
+
+.cta:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+  .inner {
+    padding: 0.875rem 1.25rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .cta {
+    margin-left: auto;
+  }
+}

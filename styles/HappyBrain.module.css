@@ -1,4 +1,4 @@
-/* Home — Assystu Professional Warmth. No-Line Rule. Tonal Layering. */
+/* HappyBrain — Assystu Professional Warmth. No-Line Rule. */
 
 .page { background: var(--surface); }
 
@@ -23,50 +23,12 @@
   font-size: clamp(1.125rem, 2vw, 1.375rem);
   color: var(--on-surface-variant);
   line-height: 1.5;
-  margin-bottom: 2rem;
-}
-
-.heroBullets {
-  list-style: none;
   margin-bottom: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
-}
-
-.heroBullets li {
-  font-size: 1rem;
-  color: var(--on-surface-variant);
-  padding-left: 1.5rem;
-  position: relative;
-  line-height: 1.5;
-}
-
-.heroBullets li::before {
-  content: "—";
-  position: absolute;
-  left: 0;
-  color: var(--primary);
-}
-
-.heroCtas {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.heroCtaSecondary {
-  font-size: 0.9375rem;
-  color: var(--primary);
-  font-weight: 500;
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
 /* ── Secciones ─────────────────────────────────────────── */
-.section     { padding: 5rem 2rem; background: var(--surface); }
-.sectionLow  { padding: 5rem 2rem; background: var(--surface-low); }
+.section    { padding: 5rem 2rem; background: var(--surface); }
+.sectionLow { padding: 5rem 2rem; background: var(--surface-low); }
 .sectionDark { padding: 6rem 2rem; background: var(--primary); text-align: center; }
 
 .inner       { max-width: 1100px; margin: 0 auto; }
@@ -121,54 +83,21 @@
   color: var(--primary);
 }
 
-/* ── 4 Pilares ──────────────────────────────────────────── */
-.pilaresGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.pilarCard {
-  background: var(--surface-low);
-  padding: 1.75rem;
-  border-radius: 0.375rem;
-}
-
-.pilarNum {
-  font-size: 0.6875rem;
-  font-weight: 600;
-  color: var(--primary);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-
-.pilarTitle {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--primary);
-  margin-bottom: 0.5rem;
-}
-
-.pilarText {
-  font-size: 0.9375rem;
-  color: var(--on-surface-variant);
-  line-height: 1.55;
-}
-
-/* ── 3 Capas (resumen) ──────────────────────────────────── */
+/* ── Cards 3 capas ──────────────────────────────────────── */
 .capasGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 0;
 }
 
 .capaCard {
   background: var(--surface-lowest);
-  padding: 2rem;
+  padding: 2.25rem;
   border-radius: 0.375rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 .capaNum {
@@ -177,20 +106,75 @@
   color: var(--primary);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 0.375rem;
 }
 
 .capaTitle {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: var(--primary);
-  margin-bottom: 0.75rem;
+  line-height: 1.25;
 }
 
 .capaDesc {
   font-size: 0.9375rem;
   color: var(--on-surface-variant);
   line-height: 1.55;
+}
+
+.capaSubtitle {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.375rem;
+}
+
+.capaBullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.capaBullets li {
+  font-size: 0.9375rem;
+  color: var(--on-surface-variant);
+  padding-left: 1.25rem;
+  position: relative;
+  line-height: 1.45;
+}
+
+.capaBullets li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: 1.2em;
+}
+
+.capaPrice {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.capaPriceRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.capaPriceLabel {
+  font-size: 0.8125rem;
+  color: var(--on-surface-variant);
+}
+
+.capaPriceValue {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-align: right;
 }
 
 /* ── Para quién ─────────────────────────────────────────── */
@@ -227,7 +211,7 @@
   line-height: 1.65;
 }
 
-/* ── CTA cierre (fondo oscuro) ──────────────────────────── */
+/* ── Cierre ─────────────────────────────────────────────── */
 .cierreCta {
   display: inline-block;
   background: var(--on-primary);
@@ -243,10 +227,10 @@
 
 /* ── Responsive ─────────────────────────────────────────── */
 @media (max-width: 640px) {
-  .hero           { padding: 4rem 1.25rem 3.5rem; }
+  .hero        { padding: 4rem 1.25rem 3.5rem; }
   .section,
-  .sectionLow     { padding: 3.5rem 1.25rem; }
-  .sectionDark    { padding: 4rem 1.25rem; }
-  .paraQuienGrid  { grid-template-columns: 1fr; gap: 2rem; }
-  .heroCtas       { flex-direction: column; align-items: flex-start; }
+  .sectionLow  { padding: 3.5rem 1.25rem; }
+  .sectionDark { padding: 4rem 1.25rem; }
+  .paraQuienGrid { grid-template-columns: 1fr; gap: 2rem; }
+  .capaPriceRow { flex-direction: column; gap: 0.25rem; }
 }

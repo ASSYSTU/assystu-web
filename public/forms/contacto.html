@@ -1,8 +1,9 @@
 <!-- Netlify Forms detection — no modificar sin actualizar pages/contacto.tsx -->
-<form name="contacto" netlify hidden>
-  <input type="text"     name="nombre" />
-  <input type="email"    name="email" />
-  <input type="text"     name="empresa" />
+<form name="contacto" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="bot-field" />
+  <input type="text" name="nombre" />
+  <input type="email" name="email" />
+  <input type="text" name="empresa" />
   <select name="equipo"><option></option></select>
   <textarea name="mensaje"></textarea>
 </form>

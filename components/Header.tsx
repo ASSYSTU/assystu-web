@@ -13,8 +13,8 @@ export default function Header() {
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-surface-container-lowest">
-      <div className="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-        <Link href="/">
+      <div className="flex justify-between items-center px-4 sm:px-6 md:px-8 py-4 max-w-7xl mx-auto gap-4">
+        <Link href="/" className="shrink-0">
           <Image
             src="/logo-assystu.png"
             alt="ASSYSTU"
@@ -22,6 +22,7 @@ export default function Header() {
             height={37}
             priority
             unoptimized
+            className="w-36 sm:w-44 md:w-[200px] h-auto"
           />
         </Link>
         <div className="hidden md:flex gap-8 items-center">
@@ -44,9 +45,9 @@ export default function Header() {
         </div>
         <Link
           href="/contacto"
-          className="bg-editorial-gradient text-white px-6 py-2.5 rounded-xl font-body font-semibold text-sm hover:opacity-90 transition-opacity shadow-sm"
+          className="bg-editorial-gradient text-white px-4 py-2 md:px-6 md:py-2.5 rounded-xl font-body font-semibold text-xs md:text-sm hover:opacity-90 transition-opacity shadow-sm shrink-0 text-center"
         >
-          Agendar diagnóstico
+          Agendar<span className="hidden sm:inline"> diagnóstico</span>
         </Link>
       </div>
     </nav>

@@ -6,27 +6,33 @@ import Footer from "@/components/Footer";
 const capas = [
   {
     num: "01",
+    slug: "blueprint",
     title: "Blueprint Happy Brain",
     desc: "Sesión de trabajo estructurada con output: plan implementable de 30 días.",
     items: ["Backlog de 30 días (8–15 acciones)", "Ritmo semanal mínimo + responsables", "Estructura base del hub (Happy Brain)"],
     price: "USD 450",
     priceNote: "CLP 450.000",
+    showPrice: true,
   },
   {
     num: "02",
+    slug: "operacion",
     title: "Mentoring 4W",
     desc: "Acompañamiento para que quede hecho y usado.",
     items: ["Menos \"intención\", más implementación", "Ajustes finos semana a semana", "Evidencia y cierre real de pendientes"],
     price: "USD 1.200",
     priceNote: "CLP 1.200.000",
+    showPrice: false,
   },
   {
     num: "03",
+    slug: "optimizacion",
     title: "Mentoring 6M",
     desc: "Madurez y sostenibilidad: delegación, estándares, ritmos, SOPs y auditoría.",
     items: ["Operación que se sostiene sin sobrecarga", "Roles claros y delegación", "Mejora continua (sin reinventar la rueda)"],
     price: "USD 1.500",
     priceNote: "CLP 1.500.000 / mes",
+    showPrice: false,
   },
 ];
 
@@ -106,7 +112,7 @@ export default function HappyBrain() {
           <section id="capas" className="py-32 px-8 max-w-7xl mx-auto">
             <h2 className="font-headline text-5xl font-bold text-primary text-center mb-24">La Arquitectura de 3 Capas</h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {capas.map(({ num, title, desc, items, price, priceNote }) => (
+              {capas.map(({ num, slug, title, desc, items, price, priceNote, showPrice }) => (
                 <div key={num} className="flex flex-col rounded-2xl border border-outline-variant/20 bg-gradient-to-br from-surface-container/60 to-surface-container-lowest/30 backdrop-blur-sm shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
                   <div className="px-8 pt-8 pb-0">
                     <span className="text-7xl font-headline italic text-outline-variant/40 font-black leading-none block mb-2">{num}</span>
@@ -123,11 +129,17 @@ export default function HappyBrain() {
                     </ul>
                   </div>
                   <div className="mt-auto px-8 pb-8">
-                    <div className="bg-surface-container-lowest rounded-xl p-4 mb-6">
-                      <span className="font-headline text-3xl font-bold text-primary">{price}</span>
-                      <span className="text-on-surface-variant text-sm ml-2">{priceNote}</span>
-                    </div>
-                    <Link href="/contacto" className="block text-center bg-editorial-gradient text-white px-6 py-3 rounded-xl font-bold hover:opacity-90 transition-opacity">
+                    {showPrice ? (
+                      <div className="bg-surface-container-lowest rounded-xl p-4 mb-6">
+                        <span className="font-headline text-3xl font-bold text-primary">{price}</span>
+                        <span className="text-on-surface-variant text-sm ml-2">{priceNote}</span>
+                      </div>
+                    ) : (
+                      <p className="text-on-surface-variant/60 text-xs italic leading-relaxed mb-6 px-1">
+                        El precio de esta etapa se definirá y comunicará durante nuestra sesión de diagnóstico, ya que depende de la complejidad de la implementación.
+                      </p>
+                    )}
+                    <Link href={`/contacto?capa=${slug}`} className="block text-center bg-editorial-gradient text-white px-6 py-3 rounded-xl font-bold hover:opacity-90 transition-opacity">
                       Agendar diagnóstico
                     </Link>
                   </div>

@@ -1,10 +1,28 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+const capaLabels: Record<string, string> = {
+  blueprint: "Blueprint Happy Brain (Capa 01)",
+  operacion: "Mentoring 4W (Capa 02)",
+  optimizacion: "Mentoring 6M (Capa 03)",
+};
+
 export default function Contacto() {
+  const router = useRouter();
+  const [mensaje, setMensaje] = useState("");
+
+  useEffect(() => {
+    const { capa } = router.query;
+    if (capa && typeof capa === "string" && capaLabels[capa]) {
+      setMensaje(`Hola, vengo desde la página de Happy Brain y me gustaría agendar un diagnóstico para la capa: ${capaLabels[capa]}.`);
+    }
+  }, [router.query]);
+
   return (
     <>
       <Head>
@@ -41,6 +59,7 @@ export default function Contacto() {
           </section>
 
           {/* ── Booking placeholder ── */}
+          {/* PENDIENTE: habilitar cuando el agendador (Google Calendar / Calendly) esté configurado
           <section className="bg-surface-container-low py-24 px-8">
             <div className="max-w-7xl mx-auto">
               <div className="bg-surface-container-lowest p-12 rounded-xl flex flex-col items-center text-center border-t-4 border-tertiary">
@@ -53,6 +72,7 @@ export default function Contacto() {
               </div>
             </div>
           </section>
+          */}
 
           {/* ── Formulario (Netlify Forms) ── */}
           <section className="py-24 px-8 max-w-7xl mx-auto">
@@ -137,6 +157,8 @@ export default function Contacto() {
                       required
                       rows={4}
                       placeholder="¿En qué podemos ayudarte?"
+                      value={mensaje}
+                      onChange={(e) => setMensaje(e.target.value)}
                       className="w-full bg-surface-container-high border-none rounded-md px-4 py-3 focus:ring-2 focus:ring-primary/40 transition-all outline-none resize-none"
                     />
                   </div>
@@ -185,7 +207,7 @@ export default function Contacto() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                   <div>
                     <span className="text-xs font-bold uppercase tracking-widest text-on-tertiary-container block mb-2">Email</span>
-                    <a href="mailto:hola@assystu.com" className="text-xl font-headline hover:text-tertiary transition-colors">hola@assystu.com</a>
+                    <a href="mailto:info-experiencias@assystu.com" className="text-xl font-headline hover:text-tertiary transition-colors">info-experiencias@assystu.com</a>
                   </div>
                   <div>
                     <span className="text-xs font-bold uppercase tracking-widest text-on-tertiary-container block mb-2">LinkedIn</span>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { TextRotate } from "@/components/TextRotate";
 
 export default function Home() {
   return (
@@ -98,7 +99,20 @@ export default function Home() {
           <section className="py-24 px-8">
             <div className="max-w-4xl mx-auto text-center space-y-12">
               <span className="font-label text-sm uppercase tracking-widest text-on-tertiary-container font-bold">La Transformación</span>
-              <h2 className="font-headline text-5xl md:text-7xl font-bold text-primary leading-tight">Claridad operacional <span className="italic text-on-tertiary-container">absoluta.</span></h2>
+              <h2 className="font-headline text-5xl md:text-7xl font-bold text-primary leading-tight flex flex-wrap justify-center gap-x-3 items-center">
+                <span>Claridad operacional</span>
+                <TextRotate
+                  texts={[
+                    "absoluta.",
+                    "accionable.",
+                    "tangible.",
+                    "sostenida."
+                  ]}
+                  staggerDuration={0.03}
+                  rotationInterval={2500}
+                  mainClassName="italic text-on-tertiary-container overflow-hidden"
+                />
+              </h2>
               <p className="text-2xl text-on-surface-variant leading-relaxed">
                 Instalamos un <strong>sistema semanal sostenible</strong> que actúa como el HUB central de tu negocio. Pasamos de la improvisación al rigor de un método probado: <strong>Happy Brain</strong>.
               </p>

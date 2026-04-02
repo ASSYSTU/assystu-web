@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -49,9 +50,16 @@ export default function Home() {
               </div>
               <div className="lg:col-span-5 relative">
                 <div className="aspect-square bg-surface-container-high rounded-full relative overflow-hidden">
-                  <div className="absolute inset-0 bg-primary/5" />
+                  <Image 
+                    src="/hero-desk.png" 
+                    alt="Escritorio organizado que refleja claridad mental" 
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-primary/5 pointer-events-none mix-blend-multiply" />
                 </div>
-                <div className="absolute -bottom-6 -left-6 bg-tertiary text-on-tertiary p-8 rounded-xl shadow-xl max-w-[240px]">
+                <div className="absolute -bottom-6 -left-6 bg-tertiary text-on-tertiary p-8 rounded-xl shadow-xl max-w-[240px] z-10">
                   <p className="font-headline italic text-xl">&ldquo;La claridad es el único antídoto contra el caos operacional.&rdquo;</p>
                 </div>
               </div>
@@ -141,7 +149,14 @@ export default function Home() {
                     ))}
                   </div>
                 </div>
-                <div className="lg:w-1/2 min-h-[400px] bg-surface-container-high" />
+                <div className="lg:w-1/2 min-h-[400px] relative">
+                  <Image
+                    src="/home-30-days.png"
+                    alt="Qué cambia en 30 días con el Método Happy Brain"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </div>
           </section>

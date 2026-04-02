@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -33,7 +34,13 @@ export default function TransformaERP() {
                 </div>
               </div>
               <div className="col-span-12 md:col-span-5 relative mt-12 md:mt-0">
-                <div className="aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-high relative">
+                <div className="aspect-[4/5] rounded-xl overflow-hidden relative">
+                  <Image
+                    src="/erp-hero.png"
+                    alt="Arquitectura de resultados operativos"
+                    fill
+                    className="object-cover"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent" />
                 </div>
                 <div className="absolute -bottom-6 -left-6 p-8 bg-tertiary text-on-tertiary rounded-xl max-w-[240px]">

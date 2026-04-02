@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -27,7 +28,14 @@ export default function Contacto() {
                 </p>
               </div>
               <div className="col-span-12 md:col-span-5 flex items-end justify-end">
-                <div className="w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container-high" />
+                <div className="w-full aspect-[4/3] rounded-xl overflow-hidden relative">
+                  <Image
+                    src="/contacto-hero.png"
+                    alt="Conversemos sobre tu operación"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </div>
           </section>

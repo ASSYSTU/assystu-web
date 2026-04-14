@@ -12,7 +12,7 @@ export default function Header() {
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-surface-container-lowest">
+    <nav className="fixed top-0 w-full z-[60] bg-surface-container-lowest">
       <div className="flex justify-between items-center px-4 sm:px-6 md:px-8 py-4 max-w-7xl mx-auto gap-4">
         <Link href="/" className="shrink-0">
           <Image

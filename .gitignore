@@ -42,3 +42,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# claude code (dev local)
+.claude/
+
+# directorio temporal de build (generado localmente)
+/tmp/

@@ -205,6 +205,44 @@ export default function HappyBrain() {
             </div>
           </section>
 
+          {/* ── IA ── */}
+          <section className="py-32 bg-surface-container-low px-8">
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-16">
+                <span className="font-label text-xs uppercase tracking-widest text-on-tertiary-container font-bold mb-4 block">Inteligencia Artificial</span>
+                <h2 className="font-headline text-5xl font-bold text-primary mb-6 leading-tight">IA que funciona porque tiene contexto</h2>
+                <p className="text-on-surface-variant text-lg max-w-2xl mx-auto">
+                  La IA solo es útil cuando tiene información estructurada. Por eso el método importa: cuando tu equipo documenta en el hub y sigue el ritual, la IA puede organizar, resumir y responder sobre tu operación al instante.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {[
+                  {
+                    icon: "hub",
+                    title: "Hub conectado",
+                    desc: "La IA tiene acceso a tu backlog, acuerdos y pendientes. Organiza y prioriza al instante, sin que tengas que recordar dónde está cada cosa.",
+                  },
+                  {
+                    icon: "autorenew",
+                    title: "Ritual que alimenta la IA",
+                    desc: "Cada semana que tu equipo documenta en el hub, la IA tiene más contexto. Minutas, resúmenes y seguimiento de pendientes sin carga extra.",
+                  },
+                  {
+                    icon: "auto_awesome",
+                    title: "Preguntas que se responden solas",
+                    desc: "¿Qué quedó pendiente? ¿Qué acordamos? ¿Qué tiene prioridad? La IA responde porque la información está donde debe estar.",
+                  },
+                ].map(({ icon, title, desc }) => (
+                  <div key={title} className="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/20 space-y-4">
+                    <span className="material-symbols-outlined text-4xl text-on-tertiary-container block">{icon}</span>
+                    <h3 className="font-headline text-xl font-bold text-primary">{title}</h3>
+                    <p className="text-on-surface-variant text-sm leading-relaxed">{desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
           {/* ── Las 3 Capas ── */}
           <section id="capas" className="py-32 px-8 max-w-7xl mx-auto">
             <div className="text-center mb-24">
@@ -255,44 +293,6 @@ export default function HappyBrain() {
                   </div>
                 </div>
               ))}
-            </div>
-          </section>
-
-          {/* ── IA ── */}
-          <section className="py-32 bg-surface-container-low px-8">
-            <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-16">
-                <span className="font-label text-xs uppercase tracking-widest text-on-tertiary-container font-bold mb-4 block">Inteligencia Artificial</span>
-                <h2 className="font-headline text-5xl font-bold text-primary mb-6 leading-tight">IA que funciona porque tiene contexto</h2>
-                <p className="text-on-surface-variant text-lg max-w-2xl mx-auto">
-                  La IA solo es útil cuando tiene información estructurada. Por eso el método importa: cuando tu equipo documenta en el hub y sigue el ritual, la IA puede organizar, resumir y responder sobre tu operación al instante.
-                </p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {[
-                  {
-                    icon: "hub",
-                    title: "Hub conectado",
-                    desc: "La IA tiene acceso a tu backlog, acuerdos y pendientes. Organiza y prioriza al instante, sin que tengas que recordar dónde está cada cosa.",
-                  },
-                  {
-                    icon: "autorenew",
-                    title: "Ritual que alimenta la IA",
-                    desc: "Cada semana que tu equipo documenta en el hub, la IA tiene más contexto. Minutas, resúmenes y seguimiento de pendientes sin carga extra.",
-                  },
-                  {
-                    icon: "auto_awesome",
-                    title: "Preguntas que se responden solas",
-                    desc: "¿Qué quedó pendiente? ¿Qué acordamos? ¿Qué tiene prioridad? La IA responde porque la información está donde debe estar.",
-                  },
-                ].map(({ icon, title, desc }) => (
-                  <div key={title} className="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/20 space-y-4">
-                    <span className="material-symbols-outlined text-4xl text-on-tertiary-container block">{icon}</span>
-                    <h3 className="font-headline text-xl font-bold text-primary">{title}</h3>
-                    <p className="text-on-surface-variant text-sm leading-relaxed">{desc}</p>
-                  </div>
-                ))}
-              </div>
             </div>
           </section>
 

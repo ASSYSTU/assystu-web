@@ -18,13 +18,13 @@ export default function Home() {
         <main className="pt-24">
 
           {/* ── Hero ── */}
-          <section className="relative flex items-center px-8 py-20 max-w-7xl mx-auto overflow-hidden">
+          <section className="relative flex items-center px-8 py-14 xl:py-16 2xl:py-20 max-w-7xl mx-auto overflow-hidden">
             <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-7 space-y-8">
-                <h1 className="font-headline text-6xl md:text-8xl font-extrabold text-primary tracking-tighter leading-none">
+                <h1 className="font-headline text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-extrabold text-primary tracking-tighter leading-none">
                   Método Happy Brain
                 </h1>
-                <p className="text-2xl md:text-3xl font-headline italic text-on-surface-variant max-w-2xl leading-relaxed">
+                <p className="text-xl lg:text-2xl 2xl:text-3xl font-headline italic text-on-surface-variant max-w-2xl leading-relaxed">
                   Organiza tu vida. Baja la carga mental. Ejecuta semana a semana.
                 </p>
                 <ul className="space-y-4 py-4">
@@ -68,12 +68,12 @@ export default function Home() {
           </section>
 
           {/* ── El problema ── */}
-          <section className="bg-surface-container-low py-24 px-8">
+          <section className="bg-surface-container-low py-14 xl:py-16 2xl:py-24 px-8">
             <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-16 2xl:gap-24 items-center">
                 <div>
-                  <h2 className="font-headline text-5xl font-bold text-primary mb-8 leading-tight">El caos no es falta de ganas, es falta de arquitectura.</h2>
-                  <p className="text-xl text-on-surface-variant mb-12 leading-relaxed">
+                  <h2 className="font-headline text-3xl lg:text-4xl xl:text-5xl font-bold text-primary mb-8 leading-tight">El caos no es falta de ganas, es falta de arquitectura.</h2>
+                  <p className="text-lg xl:text-xl text-on-surface-variant mb-12 leading-relaxed">
                     Vives con demasiadas cosas en la cabeza. La coordinación sucede por ráfagas de WhatsApp, apagas incendios a diario y sientes que, por mucho que corras, el sistema no es sostenible. Sin un método, el crecimiento solo significa más ruido.
                   </p>
                 </div>
@@ -96,10 +96,10 @@ export default function Home() {
           </section>
 
           {/* ── La promesa ── */}
-          <section className="py-24 px-8">
+          <section className="py-14 xl:py-16 2xl:py-24 px-8">
             <div className="max-w-4xl mx-auto text-center space-y-12">
               <span className="font-label text-sm uppercase tracking-widest text-on-tertiary-container font-bold">La Transformación</span>
-              <h2 className="font-headline text-5xl md:text-7xl font-bold text-primary leading-tight flex flex-wrap justify-center gap-x-3 items-center">
+              <h2 className="font-headline text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-primary leading-tight flex flex-wrap justify-center gap-x-3 items-center">
                 <span>Claridad operacional</span>
                 <TextRotate
                   texts={[
@@ -113,7 +113,7 @@ export default function Home() {
                   mainClassName="italic text-on-tertiary-container overflow-hidden"
                 />
               </h2>
-              <p className="text-2xl text-on-surface-variant leading-relaxed">
+              <p className="text-lg xl:text-2xl text-on-surface-variant leading-relaxed">
                 Instalamos un <strong>sistema semanal sostenible</strong> que actúa como el HUB central de tu negocio. Pasamos de la improvisación al rigor de un método probado: <strong>Happy Brain</strong>.
               </p>
               <div className="h-1 w-24 bg-tertiary mx-auto" />
@@ -121,16 +121,16 @@ export default function Home() {
           </section>
 
           {/* ── Las 3 Capas del Método ── */}
-          <section className="bg-primary text-on-primary py-24 px-8">
+          <section className="bg-primary text-on-primary py-14 xl:py-16 2xl:py-24 px-8">
             <div className="max-w-7xl mx-auto">
-              <h2 className="font-headline text-4xl font-bold mb-16 text-center">Las 3 Capas del Método</h2>
+              <h2 className="font-headline text-3xl xl:text-4xl font-bold mb-12 xl:mb-16 text-center">Las 3 Capas del Método</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {[
                   { num: "01", title: "Capa de Captura", desc: "Vaciamos el ruido. Creamos un backlog estructurado de 30 días donde cada acción tiene un dueño y un entregable claro." },
                   { num: "02", title: "Capa de Rituales", desc: "El latido del negocio. Reuniones mínimas con una regla sagrada: sin evidencia documental, el punto no se revisa." },
                   { num: "03", title: "Capa de Aceleración", desc: "Integración de IA en procesos clave. No para hacer más, sino para hacer lo mismo en una fracción del tiempo." },
                 ].map(({ num, title, desc }) => (
-                  <div key={num} className="bg-primary-container p-10 rounded-xl border border-on-primary-container/20 hover:border-on-tertiary-container transition-all">
+                  <div key={num} className="bg-primary-container p-6 xl:p-10 rounded-xl border border-on-primary-container/20 hover:border-on-tertiary-container transition-all">
                     <span className="text-6xl font-headline italic opacity-20 mb-6 block">{num}</span>
                     <h3 className="text-2xl font-bold mb-4">{title}</h3>
                     <p className="text-on-primary-container leading-relaxed">{desc}</p>
@@ -141,11 +141,11 @@ export default function Home() {
           </section>
 
           {/* ── 30 días ── */}
-          <section className="py-24 px-8">
+          <section className="py-14 xl:py-16 2xl:py-24 px-8">
             <div className="max-w-7xl mx-auto">
               <div className="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm flex flex-col lg:flex-row">
-                <div className="lg:w-1/2 p-12 md:p-16 space-y-8">
-                  <h2 className="font-headline text-4xl font-bold text-primary">¿Qué cambia en 30 días?</h2>
+                <div className="lg:w-1/2 p-8 md:p-10 xl:p-12 2xl:p-16 space-y-8">
+                  <h2 className="font-headline text-3xl xl:text-4xl font-bold text-primary">¿Qué cambia en 30 días?</h2>
                   <div className="space-y-6">
                     {[
                       { n: 1, title: "Backlog Limpio", desc: "Tienes las 8–15 acciones críticas del mes priorizadas." },
@@ -176,11 +176,11 @@ export default function Home() {
           </section>
 
           {/* ── Para quién ── */}
-          <section className="bg-surface-container py-24 px-8">
+          <section className="bg-surface-container py-14 xl:py-16 2xl:py-24 px-8">
             <div className="max-w-7xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant/30 rounded-2xl overflow-hidden">
-                <div className="bg-surface p-12 md:p-16">
-                  <h3 className="font-headline text-3xl font-bold text-primary mb-8 flex items-center gap-3">
+                <div className="bg-surface p-8 md:p-10 xl:p-12 2xl:p-16">
+                  <h3 className="font-headline text-2xl xl:text-3xl font-bold text-primary mb-8 flex items-center gap-3">
                     <span className="material-symbols-outlined text-on-primary-container">sentiment_satisfied</span>
                     Para quién es esto
                   </h3>
@@ -197,8 +197,8 @@ export default function Home() {
                     ))}
                   </ul>
                 </div>
-                <div className="bg-surface p-12 md:p-16">
-                  <h3 className="font-headline text-3xl font-bold text-primary mb-8 flex items-center gap-3">
+                <div className="bg-surface p-8 md:p-10 xl:p-12 2xl:p-16">
+                  <h3 className="font-headline text-2xl xl:text-3xl font-bold text-primary mb-8 flex items-center gap-3">
                     <span className="material-symbols-outlined text-on-tertiary-container">sentiment_dissatisfied</span>
                     Para quién NO es esto
                   </h3>
@@ -220,9 +220,9 @@ export default function Home() {
           </section>
 
           {/* ── FAQ ── */}
-          <section className="py-24 px-8">
+          <section className="py-14 xl:py-16 2xl:py-24 px-8">
             <div className="max-w-3xl mx-auto">
-              <h2 className="font-headline text-4xl font-bold text-primary text-center mb-16">Preguntas Frecuentes</h2>
+              <h2 className="font-headline text-3xl xl:text-4xl font-bold text-primary text-center mb-12 xl:mb-16">Preguntas Frecuentes</h2>
               <div className="space-y-4">
                 {[
                   {
@@ -251,12 +251,12 @@ export default function Home() {
           </section>
 
           {/* ── Cierre CTA ── */}
-          <section className="bg-editorial-gradient text-on-primary py-24 px-8 relative overflow-hidden">
+          <section className="bg-editorial-gradient text-on-primary py-14 xl:py-16 2xl:py-24 px-8 relative overflow-hidden">
             <div className="max-w-4xl mx-auto text-center space-y-12 relative z-10">
-              <h2 className="font-headline text-5xl md:text-6xl font-extrabold leading-tight">¿Listo para recuperar el control de tus semanas?</h2>
-              <p className="text-xl opacity-90 max-w-2xl mx-auto">El diagnóstico es el primer paso para entender dónde se está fugando la energía de tu equipo. Sin compromiso.</p>
+              <h2 className="font-headline text-4xl xl:text-5xl 2xl:text-6xl font-extrabold leading-tight">¿Listo para recuperar el control de tus semanas?</h2>
+              <p className="text-lg xl:text-xl opacity-90 max-w-2xl mx-auto">El diagnóstico es el primer paso para entender dónde se está fugando la energía de tu equipo. Sin compromiso.</p>
               <div className="flex justify-center">
-                <Link href="/contacto" className="bg-on-tertiary-container text-white px-12 py-5 rounded-xl font-bold text-xl hover:scale-105 transition-all inline-block">
+                <Link href="/contacto" className="bg-on-tertiary-container text-white px-10 xl:px-12 py-4 xl:py-5 rounded-xl font-bold text-lg xl:text-xl hover:scale-105 transition-all inline-block">
                   Agendar diagnóstico ahora
                 </Link>
               </div>

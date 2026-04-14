@@ -146,12 +146,12 @@ export default function HappyBrain() {
         <main className="pt-24">
 
           {/* ── Hero ── */}
-          <section className="flex flex-col justify-center px-8 py-24 max-w-7xl mx-auto">
+          <section className="flex flex-col justify-center px-8 py-14 xl:py-16 2xl:py-24 max-w-7xl mx-auto">
             <div className="max-w-4xl">
-              <h1 className="font-headline text-6xl md:text-8xl font-bold tracking-tight text-primary leading-tight mb-8">
+              <h1 className="font-headline text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold tracking-tight text-primary leading-tight mb-8">
                 El sistema operativo <span className="italic text-on-tertiary-container">cognitivo</span> para líderes que necesitan claridad.
               </h1>
-              <p className="font-body text-xl md:text-2xl text-on-surface-variant max-w-2xl mb-12">
+              <p className="font-body text-lg xl:text-xl 2xl:text-2xl text-on-surface-variant max-w-2xl mb-12">
                 Happy Brain no es una herramienta; es la arquitectura que externaliza tu conocimiento, procesos y decisiones — con IA como capa de inteligencia que potencia cada etapa del método.
               </p>
               <div className="flex flex-col md:flex-row gap-4">
@@ -166,19 +166,19 @@ export default function HappyBrain() {
           </section>
 
           {/* ── Qué es / Qué NO es ── */}
-          <section className="py-24 bg-surface-container-low px-8">
+          <section className="py-14 xl:py-16 2xl:py-24 bg-surface-container-low px-8">
             <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 xl:gap-14 2xl:gap-16 items-start">
                 <div className="md:sticky md:top-32">
                   <span className="font-label text-on-tertiary-container font-bold tracking-widest uppercase text-sm mb-4 block">La Definición</span>
-                  <h2 className="font-headline text-5xl font-bold text-primary mb-8 leading-tight">Partimos con un diagnóstico y un plan de 30 días.</h2>
+                  <h2 className="font-headline text-3xl lg:text-4xl xl:text-5xl font-bold text-primary mb-8 leading-tight">Partimos con un diagnóstico y un plan de 30 días.</h2>
                   <div className="space-y-6 text-on-surface-variant text-lg">
                     <p>En vez de &ldquo;ordenar por ordenar&rdquo;, definimos un backlog realista, con dueños, fechas y estándar mínimo de hecho. Priorizamos el <strong>método</strong> por encima de la plataforma técnica.</p>
                     <p>Es una intervención estructural en la forma en que tu equipo procesa la información y ejecuta semana a semana.</p>
                   </div>
                 </div>
                 <div className="space-y-8">
-                  <div className="bg-surface-container-lowest p-10 rounded-xl shadow-sm border-l-4 border-primary">
+                  <div className="bg-surface-container-lowest p-6 xl:p-10 rounded-xl shadow-sm border-l-4 border-primary">
                     <h3 className="font-headline text-2xl font-bold text-primary mb-4 italic">Happy Brain ES...</h3>
                     <ul className="space-y-4 text-on-surface-variant">
                       {["Un backlog de 30 días con dueños y entregables claros.", "Un ritmo semanal mínimo con evidencia documentada.", "Un hub central que centraliza notas, acuerdos y tareas."].map((item) => (
@@ -189,7 +189,7 @@ export default function HappyBrain() {
                       ))}
                     </ul>
                   </div>
-                  <div className="bg-surface-container-high p-10 rounded-xl">
+                  <div className="bg-surface-container-high p-6 xl:p-10 rounded-xl">
                     <h3 className="font-headline text-2xl font-bold text-on-surface-variant mb-4 italic opacity-60">Happy Brain NO ES...</h3>
                     <ul className="space-y-4 text-on-surface-variant opacity-70">
                       {["Una simple plantilla de Notion descargable.", "Un gestor de tareas tradicional (To-Do List).", "Un método que requiere horas de mantenimiento cada semana."].map((item) => (
@@ -206,11 +206,11 @@ export default function HappyBrain() {
           </section>
 
           {/* ── IA ── */}
-          <section className="py-32 bg-surface-container-low px-8">
+          <section className="py-14 xl:py-20 2xl:py-32 bg-surface-container-low px-8">
             <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-16">
+              <div className="text-center mb-10 xl:mb-16">
                 <span className="font-label text-xs uppercase tracking-widest text-on-tertiary-container font-bold mb-4 block">Inteligencia Artificial</span>
-                <h2 className="font-headline text-5xl font-bold text-primary mb-6 leading-tight">IA que funciona porque tiene contexto</h2>
+                <h2 className="font-headline text-3xl lg:text-4xl xl:text-5xl font-bold text-primary mb-6 leading-tight">IA que funciona porque tiene contexto</h2>
                 <p className="text-on-surface-variant text-lg max-w-2xl mx-auto">
                   La IA solo es útil cuando tiene información estructurada. Por eso el método importa: cuando tu equipo documenta en el hub y sigue el ritual, la IA puede organizar, resumir y responder sobre tu operación al instante.
                 </p>
@@ -244,9 +244,9 @@ export default function HappyBrain() {
           </section>
 
           {/* ── Las 3 Capas ── */}
-          <section id="capas" className="py-32 px-8 max-w-7xl mx-auto">
-            <div className="text-center mb-24">
-              <h2 className="font-headline text-5xl font-bold text-primary mb-4">La Arquitectura de 3 Capas</h2>
+          <section id="capas" className="py-14 xl:py-20 2xl:py-32 px-8 max-w-7xl mx-auto">
+            <div className="text-center mb-12 xl:mb-16 2xl:mb-24">
+              <h2 className="font-headline text-3xl lg:text-4xl xl:text-5xl font-bold text-primary mb-4">La Arquitectura de 3 Capas</h2>
               <p className="text-on-surface-variant text-lg">Para equipos y organizaciones que necesitan operar con método.</p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -297,9 +297,9 @@ export default function HappyBrain() {
           </section>
 
           {/* ── FAQ ── */}
-          <section className="py-32 bg-surface-container-low px-8">
+          <section className="py-14 xl:py-20 2xl:py-32 bg-surface-container-low px-8">
             <div className="max-w-3xl mx-auto">
-              <h2 className="font-headline text-5xl font-bold text-primary text-center mb-16 italic">Preguntas frecuentes</h2>
+              <h2 className="font-headline text-3xl xl:text-4xl 2xl:text-5xl font-bold text-primary text-center mb-12 xl:mb-16 italic">Preguntas frecuentes</h2>
               <div className="space-y-6">
                 {[
                   { q: "¿Necesito usar Notion sí o sí?", a: "No necesariamente. Usamos Happy Brain como hub cuando hace sentido, pero el foco es el método y la consistencia." },
@@ -320,13 +320,13 @@ export default function HappyBrain() {
           </section>
 
           {/* ── CTA Final ── */}
-          <section className="py-32 px-8">
-            <div className="max-w-7xl mx-auto bg-editorial-gradient rounded-3xl p-16 text-center text-on-primary relative overflow-hidden">
+          <section className="py-14 xl:py-20 2xl:py-32 px-8">
+            <div className="max-w-7xl mx-auto bg-editorial-gradient rounded-3xl p-8 md:p-12 xl:p-14 2xl:p-16 text-center text-on-primary relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-on-tertiary-container/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none" />
-              <h2 className="font-headline text-5xl font-bold mb-8 relative z-10">Si quieres salir del modo incendio, partamos por el diagnóstico</h2>
-              <p className="text-xl opacity-90 mb-12 max-w-2xl mx-auto relative z-10">Agenda una sesión de 30 minutos donde evaluaremos tu arquitectura de información actual sin compromiso.</p>
+              <h2 className="font-headline text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 xl:mb-8 relative z-10">Si quieres salir del modo incendio, partamos por el diagnóstico</h2>
+              <p className="text-lg xl:text-xl opacity-90 mb-8 xl:mb-12 max-w-2xl mx-auto relative z-10">Agenda una sesión de 30 minutos donde evaluaremos tu arquitectura de información actual sin compromiso.</p>
               <div className="flex flex-col md:flex-row justify-center gap-6 relative z-10">
-                <Link href="/contacto" className="bg-on-tertiary-container text-white px-10 py-5 rounded-xl font-bold text-xl hover:scale-105 transition-transform inline-block">
+                <Link href="/contacto" className="bg-on-tertiary-container text-white px-8 xl:px-10 py-4 xl:py-5 rounded-xl font-bold text-lg xl:text-xl hover:scale-105 transition-transform inline-block">
                   Agendar diagnóstico
                 </Link>
               </div>

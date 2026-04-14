@@ -35,13 +35,13 @@ export default function Contacto() {
         <main className="pt-24">
 
           {/* ── Hero ── */}
-          <section className="px-8 py-20 max-w-7xl mx-auto">
+          <section className="px-8 py-14 xl:py-16 2xl:py-20 max-w-7xl mx-auto">
             <div className="editorial-grid">
               <div className="col-span-12 md:col-span-7">
-                <h1 className="font-headline text-6xl md:text-8xl font-black tracking-tight leading-none mb-8 text-primary">
+                <h1 className="font-headline text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black tracking-tight leading-none mb-8 text-primary">
                   Contacto / <span className="italic font-normal text-on-surface-variant">Agendar diagnóstico</span>
                 </h1>
-                <p className="text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                <p className="text-lg xl:text-xl text-on-surface-variant max-w-xl leading-relaxed">
                   Estamos listos para escuchar los desafíos de tu operación. Una conversación honesta es el primer paso hacia la claridad.
                 </p>
               </div>
@@ -75,10 +75,10 @@ export default function Contacto() {
           */}
 
           {/* ── Formulario (Netlify Forms) ── */}
-          <section className="py-24 px-8 max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+          <section className="py-14 xl:py-16 2xl:py-24 px-8 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 xl:gap-14 2xl:gap-16 items-start">
               <div>
-                <h2 className="text-4xl font-bold text-primary mb-6 font-headline">¿Prefieres un mensaje directo?</h2>
+                <h2 className="text-3xl xl:text-4xl font-bold text-primary mb-6 font-headline">¿Prefieres un mensaje directo?</h2>
                 <p className="text-on-surface-variant mb-12">Si tu consulta requiere más detalle o prefieres ser contactado en un horario específico, completa este breve formulario.</p>
                 <div className="space-y-8">
                   <div className="flex items-start gap-4">
@@ -175,10 +175,10 @@ export default function Contacto() {
           </section>
 
           {/* ── Qué pasa después ── */}
-          <section className="bg-primary text-on-primary py-24 px-8 overflow-hidden relative">
+          <section className="bg-primary text-on-primary py-14 xl:py-16 2xl:py-24 px-8 overflow-hidden relative">
             <div className="max-w-7xl mx-auto relative z-10">
-              <div className="mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold mb-4 font-headline">El camino hacia la claridad</h2>
+              <div className="mb-10 xl:mb-12 2xl:mb-16">
+                <h2 className="text-3xl xl:text-4xl 2xl:text-5xl font-bold mb-4 font-headline">El camino hacia la claridad</h2>
                 <p className="text-on-primary-container max-w-xl text-lg">Qué esperar después de enviarnos tu información.</p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -199,7 +199,7 @@ export default function Contacto() {
           </section>
 
           {/* ── Canales directos ── */}
-          <section className="py-24 px-8 max-w-7xl mx-auto">
+          <section className="py-14 xl:py-16 2xl:py-24 px-8 max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-center gap-12">
               <div className="flex-1">
                 <h2 className="text-3xl font-bold text-primary mb-2 font-headline">Canales Directos</h2>

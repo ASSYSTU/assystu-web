@@ -4,6 +4,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ServiceModal, { type CapaModalData } from "@/components/ServiceModal";
+import ContactForm from "@/components/ContactForm";
 
 const capas: Array<{
   num: string;
@@ -130,8 +131,15 @@ function buildModalData(capa: typeof capas[number]): CapaModalData {
   };
 }
 
+const slugToInteres: Record<string, string> = {
+  blueprint: "blueprint",
+  operacion: "mentoring-4w",
+  optimizacion: "mentoring-6m",
+};
+
 export default function HappyBrain() {
   const [activeModal, setActiveModal] = useState<number | null>(null);
+  const [contactInteres, setContactInteres] = useState<string | null>(null);
   const modalData = capas.map(buildModalData);
 
   return (
@@ -155,11 +163,14 @@ export default function HappyBrain() {
                 Happy Brain no es una herramienta; es la arquitectura que externaliza tu conocimiento, procesos y decisiones — con IA como capa de inteligencia que potencia cada etapa del método.
               </p>
               <div className="flex flex-col md:flex-row gap-4">
-                <Link href="/contacto" className="bg-editorial-gradient text-white px-8 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                <button
+                  onClick={() => setContactInteres("")}
+                  className="bg-editorial-gradient text-white px-8 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition-all flex items-center justify-center gap-2"
+                >
                   Agendar diagnóstico <span className="material-symbols-outlined">arrow_forward</span>
-                </Link>
-                <Link href="#capas" className="bg-surface-container-highest text-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-surface-container-high transition-all text-center">
-                  Explorar las 3 capas
+                </button>
+                <Link href="#programas" className="bg-surface-container-highest text-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-surface-container-high transition-all text-center">
+                  Ver los 3 programas
                 </Link>
               </div>
             </div>
@@ -243,10 +254,10 @@ export default function HappyBrain() {
             </div>
           </section>
 
-          {/* ── Las 3 Capas ── */}
-          <section id="capas" className="py-14 xl:py-20 2xl:py-32 px-8 max-w-7xl mx-auto">
+          {/* ── Los 3 Programas ── */}
+          <section id="programas" className="py-14 xl:py-20 2xl:py-32 px-8 max-w-7xl mx-auto">
             <div className="text-center mb-12 xl:mb-16 2xl:mb-24">
-              <h2 className="font-headline text-3xl lg:text-4xl xl:text-5xl font-bold text-primary mb-4">La Arquitectura de 3 Capas</h2>
+              <h2 className="font-headline text-3xl lg:text-4xl xl:text-5xl font-bold text-primary mb-4">Los 3 Programas</h2>
               <p className="text-on-surface-variant text-lg">Para equipos y organizaciones que necesitan operar con método.</p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -284,12 +295,12 @@ export default function HappyBrain() {
                     >
                       Más información
                     </button>
-                    <Link
-                      href={`/contacto?capa=${slug}`}
-                      className="block text-center bg-editorial-gradient text-white px-6 py-3 rounded-xl font-bold hover:opacity-90 transition-opacity"
+                    <button
+                      onClick={() => setContactInteres(slugToInteres[slug] ?? slug)}
+                      className="w-full text-center bg-editorial-gradient text-white px-6 py-3 rounded-xl font-bold hover:opacity-90 transition-opacity"
                     >
                       {ctaLabel}
-                    </Link>
+                    </button>
                   </div>
                 </div>
               ))}
@@ -326,9 +337,12 @@ export default function HappyBrain() {
               <h2 className="font-headline text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 xl:mb-8 relative z-10">Si quieres salir del modo incendio, partamos por el diagnóstico</h2>
               <p className="text-lg xl:text-xl opacity-90 mb-8 xl:mb-12 max-w-2xl mx-auto relative z-10">Agenda una sesión de 30 minutos donde evaluaremos tu arquitectura de información actual sin compromiso.</p>
               <div className="flex flex-col md:flex-row justify-center gap-6 relative z-10">
-                <Link href="/contacto" className="bg-on-tertiary-container text-white px-8 xl:px-10 py-4 xl:py-5 rounded-xl font-bold text-lg xl:text-xl hover:scale-105 transition-transform inline-block">
+                <button
+                  onClick={() => setContactInteres("")}
+                  className="bg-on-tertiary-container text-white px-8 xl:px-10 py-4 xl:py-5 rounded-xl font-bold text-lg xl:text-xl hover:scale-105 transition-transform inline-block"
+                >
                   Agendar diagnóstico
-                </Link>
+                </button>
               </div>
             </div>
           </section>
@@ -344,6 +358,34 @@ export default function HappyBrain() {
         onClose={() => setActiveModal(null)}
         onNavigate={(index) => setActiveModal(index)}
       />
+
+      {/* Modal de contacto / agendar diagnóstico */}
+      {contactInteres !== null && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+          onClick={() => setContactInteres(null)}
+        >
+          <div
+            className="bg-surface-container-lowest rounded-2xl shadow-2xl w-full max-w-lg p-8 relative max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setContactInteres(null)}
+              className="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors"
+              aria-label="Cerrar"
+            >
+              <span className="material-symbols-outlined">close</span>
+            </button>
+            <h2 className="font-headline text-2xl font-bold text-primary mb-2">Agendar diagnóstico</h2>
+            <p className="text-sm text-on-surface-variant mb-6">Sesión de 30 minutos, sin costo y sin compromiso.</p>
+            <ContactForm
+              key={contactInteres}
+              defaultInteres={contactInteres}
+              onSuccess={() => {}}
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 }

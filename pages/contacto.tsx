@@ -2,24 +2,25 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ContactForm from "@/components/ContactForm";
 
-const capaLabels: Record<string, string> = {
-  blueprint: "Blueprint Happy Brain (Capa 01)",
-  operacion: "Mentoring 4W (Capa 02)",
-  optimizacion: "Mentoring 6M (Capa 03)",
+const capaToInteres: Record<string, string> = {
+  blueprint: "blueprint",
+  operacion: "mentoring-4w",
+  optimizacion: "mentoring-6m",
 };
 
 export default function Contacto() {
   const router = useRouter();
-  const [mensaje, setMensaje] = useState("");
+  const [defaultInteres, setDefaultInteres] = useState("");
 
   useEffect(() => {
     const { capa } = router.query;
-    if (capa && typeof capa === "string" && capaLabels[capa]) {
-      setMensaje(`Hola, vengo desde la página de Happy Brain y me gustaría agendar un diagnóstico para la capa: ${capaLabels[capa]}.`);
+    if (capa && typeof capa === "string" && capaToInteres[capa]) {
+      setDefaultInteres(capaToInteres[capa]);
     }
   }, [router.query]);
 
@@ -74,12 +75,12 @@ export default function Contacto() {
           </section>
           */}
 
-          {/* ── Formulario (Netlify Forms) ── */}
+          {/* ── Formulario ── */}
           <section className="py-14 xl:py-16 2xl:py-24 px-8 max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 xl:gap-14 2xl:gap-16 items-start">
               <div>
-                <h2 className="text-3xl xl:text-4xl font-bold text-primary mb-6 font-headline">¿Prefieres un mensaje directo?</h2>
-                <p className="text-on-surface-variant mb-12">Si tu consulta requiere más detalle o prefieres ser contactado en un horario específico, completa este breve formulario.</p>
+                <h2 className="text-3xl xl:text-4xl font-bold text-primary mb-6 font-headline">Agenda un diagnóstico</h2>
+                <p className="text-on-surface-variant mb-12">Una conversación honesta de 30 minutos para evaluar tu operación actual. Sin costo y sin compromiso.</p>
                 <div className="space-y-8">
                   <div className="flex items-start gap-4">
                     <span className="material-symbols-outlined text-on-tertiary-container">speed</span>
@@ -98,78 +99,10 @@ export default function Contacto() {
                 </div>
               </div>
               <div className="bg-surface-container-lowest p-8 rounded-xl shadow-sm">
-                <form
-                  name="contacto"
-                  method="POST"
-                  data-netlify="true"
-                  netlify-honeypot="bot-field"
-                  className="space-y-6"
-                >
-                  <input type="hidden" name="form-name" value="contacto" />
-                  <input type="text" name="bot-field" className="hidden" tabIndex={-1} aria-hidden="true" />
-
-                  <div className="space-y-1">
-                    <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">Nombre Completo</label>
-                    <input
-                      name="nombre"
-                      type="text"
-                      required
-                      placeholder="Tu nombre"
-                      className="w-full bg-surface-container-high border-none rounded-md px-4 py-3 focus:ring-2 focus:ring-primary/40 transition-all outline-none"
-                    />
-                  </div>
-                  <div className="space-y-1">
-                    <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">Email</label>
-                    <input
-                      name="email"
-                      type="email"
-                      required
-                      placeholder="tu@empresa.com"
-                      className="w-full bg-surface-container-high border-none rounded-md px-4 py-3 focus:ring-2 focus:ring-primary/40 transition-all outline-none"
-                    />
-                  </div>
-                  <div className="space-y-1">
-                    <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">Empresa <span className="normal-case tracking-normal opacity-60">(opcional)</span></label>
-                    <input
-                      name="empresa"
-                      type="text"
-                      placeholder="Tu empresa"
-                      className="w-full bg-surface-container-high border-none rounded-md px-4 py-3 focus:ring-2 focus:ring-primary/40 transition-all outline-none"
-                    />
-                  </div>
-                  <div className="space-y-1">
-                    <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">Tamaño de equipo <span className="normal-case tracking-normal opacity-60">(opcional)</span></label>
-                    <select
-                      name="equipo"
-                      className="w-full bg-surface-container-high border-none rounded-md px-4 py-3 focus:ring-2 focus:ring-primary/40 transition-all outline-none"
-                    >
-                      <option value="">Seleccionar...</option>
-                      <option value="solo">Solo / freelance</option>
-                      <option value="2-5">2–5 personas</option>
-                      <option value="6-20">6–20 personas</option>
-                      <option value="20+">Más de 20</option>
-                    </select>
-                  </div>
-                  <div className="space-y-1">
-                    <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">Mensaje</label>
-                    <textarea
-                      name="mensaje"
-                      required
-                      rows={4}
-                      placeholder="¿En qué podemos ayudarte?"
-                      value={mensaje}
-                      onChange={(e) => setMensaje(e.target.value)}
-                      className="w-full bg-surface-container-high border-none rounded-md px-4 py-3 focus:ring-2 focus:ring-primary/40 transition-all outline-none resize-none"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-editorial-gradient text-on-primary py-4 rounded-md font-bold text-sm uppercase tracking-widest hover:opacity-90 transition-opacity"
-                  >
-                    Enviar mensaje
-                  </button>
-                  <p className="text-[10px] text-center text-outline uppercase tracking-tighter">Procesado vía Netlify Forms</p>
-                </form>
+                <ContactForm
+                  key={defaultInteres}
+                  defaultInteres={defaultInteres}
+                />
               </div>
             </div>
           </section>

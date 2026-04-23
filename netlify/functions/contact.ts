@@ -30,6 +30,7 @@ async function notionRequest(path: string, method: string, body?: object) {
 }
 
 async function findPersonByEmail(email: string): Promise<string | null> {
+  if (!email) return null;
   const result = await notionRequest(`/databases/${PEOPLE_DB_ID}/query`, "POST", {
     filter: { property: "Email", email: { equals: email } },
     page_size: 1,
@@ -37,13 +38,31 @@ async function findPersonByEmail(email: string): Promise<string | null> {
   return (result.results?.[0]?.id as string) ?? null;
 }
 
+async function findPersonByPhone(phone: string): Promise<{ id: string; name: string } | null> {
+  if (!phone) return null;
+  const result = await notionRequest(`/databases/${PEOPLE_DB_ID}/query`, "POST", {
+    filter: { property: "Phone", phone_number: { equals: phone } },
+    page_size: 1,
+  });
+  const page = result.results?.[0];
+  if (!page) return null;
+  const name = (page.properties?.["Full Name"]?.title?.[0]?.plain_text as string) ?? "contacto existente";
+  return { id: page.id as string, name };
+}
+
+async function addComment(pageId: string, text: string) {
+  await notionRequest("/comments", "POST", {
+    parent: { page_id: pageId },
+    rich_text: [{ type: "text", text: { content: text } }],
+  });
+}
+
 async function upsertPerson(data: {
   nombre: string;
   apellido: string;
   telefono: string;
   email: string;
-}): Promise<string> {
-  const existingId = await findPersonByEmail(data.email);
+}): Promise<{ id: string; isNew: boolean; phoneMatchId?: string; phoneMatchName?: string }> {
   const fullName = `${data.nombre} ${data.apellido}`.trim();
 
   const properties: Record<string, unknown> = {
@@ -54,16 +73,42 @@ async function upsertPerson(data: {
     ...(data.telefono ? { Phone: { phone_number: data.telefono } } : {}),
   };
 
-  if (existingId) {
-    await notionRequest(`/pages/${existingId}`, "PATCH", { properties });
-    return existingId;
+  // 1. Buscar por email (match definitivo)
+  const emailMatch = data.email ? await findPersonByEmail(data.email) : null;
+  if (emailMatch) {
+    await notionRequest(`/pages/${emailMatch}`, "PATCH", { properties });
+    return { id: emailMatch, isNew: false };
   }
+
+  // 2. Buscar por teléfono (posible match — crear nuevo + comentario)
+  const phoneMatch = data.telefono ? await findPersonByPhone(data.telefono) : null;
 
   const page = await notionRequest("/pages", "POST", {
     parent: { database_id: PEOPLE_DB_ID },
     properties,
   });
-  return page.id as string;
+  const newId = page.id as string;
+
+  return {
+    id: newId,
+    isNew: true,
+    ...(phoneMatch ? { phoneMatchId: phoneMatch.id, phoneMatchName: phoneMatch.name } : {}),
+  };
+}
+
+async function openOportunidadExists(personId: string, tipoOferta: string): Promise<boolean> {
+  const result = await notionRequest(`/databases/${OPORTUNIDADES_DB_ID}/query`, "POST", {
+    filter: {
+      and: [
+        { property: "People", relation: { contains: personId } },
+        { property: "Tipo de oferta", select: { equals: tipoOferta } },
+        { property: "Etapa", select: { does_not_equal: "07Cerrado - Ganado" } },
+        { property: "Etapa", select: { does_not_equal: "08Cerrado - Perdido" } },
+      ],
+    },
+    page_size: 1,
+  });
+  return (result.results?.length ?? 0) > 0;
 }
 
 async function createOportunidad(personId: string, tipoOferta: string, fullName: string) {
@@ -119,19 +164,35 @@ export const handler = async (event: {
   }
 
   try {
-    const personId = await upsertPerson({
-      nombre: nombre.trim(),
-      apellido: (apellido ?? "").trim(),
-      telefono: (telefono ?? "").trim(),
-      email: email.trim().toLowerCase(),
+    const cleanEmail = (email ?? "").trim().toLowerCase();
+    const cleanPhone = (telefono ?? "").trim();
+    const cleanNombre = nombre.trim();
+    const cleanApellido = (apellido ?? "").trim();
+    const fullName = `${cleanNombre} ${cleanApellido}`.trim();
+
+    const person = await upsertPerson({
+      nombre: cleanNombre,
+      apellido: cleanApellido,
+      telefono: cleanPhone,
+      email: cleanEmail,
     });
+
+    // Si es registro nuevo con posible match por teléfono, agregar comentario
+    if (person.isNew && person.phoneMatchId && person.phoneMatchName) {
+      await addComment(
+        person.id,
+        `⚠️ Posible duplicado: este contacto comparte el teléfono con "${person.phoneMatchName}" (ID: ${person.phoneMatchId}). Revisar y fusionar si corresponde.`
+      );
+    }
 
     const tipoOferta = INTERES_TO_TIPO_OFERTA[interes];
     const hasInterest = !!tipoOferta;
 
     if (hasInterest) {
-      const fullName = `${nombre.trim()} ${(apellido ?? "").trim()}`.trim();
-      await createOportunidad(personId, tipoOferta, fullName);
+      const alreadyExists = await openOportunidadExists(person.id, tipoOferta);
+      if (!alreadyExists) {
+        await createOportunidad(person.id, tipoOferta, fullName);
+      }
     }
 
     return {

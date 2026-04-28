@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Head from "next/head";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ServiceModal, { type CapaModalData } from "@/components/ServiceModal";
 import ContactForm from "@/components/ContactForm";
+import SEOHead from "@/components/SEOHead";
 
 const capas: Array<{
   num: string;
@@ -144,11 +144,30 @@ export default function HappyBrain() {
 
   return (
     <>
-      <Head>
-        <title>Happy Brain — ASSYSTU</title>
-        <meta name="description" content="Bajamos carga mental y dejamos el método andando. La productividad llega como consecuencia." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      <SEOHead
+        title="Happy Brain — ASSYSTU"
+        description="Bajamos carga mental y dejamos el método andando. La productividad llega como consecuencia."
+        url="/happy-brain"
+        image="/og/og-happy-brain.png"
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Método Happy Brain",
+            provider: { "@type": "Organization", name: "ASSYSTU", url: "https://www.assystu.com" },
+            description: "Sistema operativo cognitivo para líderes. Bajamos carga mental e instalamos un método de gestión semanal sostenible con IA integrada.",
+            url: "https://www.assystu.com/happy-brain",
+            offers: [
+              { "@type": "Offer", name: "Blueprint Happy Brain", description: "Sesión de trabajo estructurada con output: plan de acción de 30 días.", price: "650", priceCurrency: "USD" },
+              { "@type": "Offer", name: "Mentoring 4W", description: "Acompañamiento de 4 semanas para que el sistema quede andando y en uso." },
+              { "@type": "Offer", name: "Mentoring 6M", description: "Madurez y sostenibilidad: delegación, estándares, ritmos, SOPs y auditoría por 6 meses." },
+            ],
+          }),
+        }}
+      />
       <div className="bg-background text-on-background font-body antialiased">
         <Header />
         <main className="pt-24">

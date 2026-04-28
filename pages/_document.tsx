@@ -1,5 +1,25 @@
 import { Html, Head, Main, NextScript } from "next/document";
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "ASSYSTU",
+  url: "https://www.assystu.com",
+  logo: "https://www.assystu.com/logo-assystu.png",
+  description:
+    "Consultora de eficiencia operacional y claridad empresarial. Implementamos el Método Happy Brain y TransformaERP para líderes y equipos en Chile.",
+  sameAs: [
+    "https://www.linkedin.com/in/aldosoto/",
+    "https://www.instagram.com/kpsota/",
+    "https://www.youtube.com/@AldoSotoE",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "info-experiencias@assystu.com",
+    contactType: "customer service",
+  },
+};
+
 export default function Document() {
   return (
     <Html lang="es" className="scroll-smooth">
@@ -18,6 +38,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-WJXWQXRB');`,
           }}
+        />
+        {/* JSON-LD Organization */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </Head>
       <body className="antialiased">

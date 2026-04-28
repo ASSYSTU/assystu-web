@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -6,6 +5,7 @@ import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
+import SEOHead from "@/components/SEOHead";
 
 const capaToInteres: Record<string, string> = {
   blueprint: "blueprint",
@@ -26,11 +26,12 @@ export default function Contacto() {
 
   return (
     <>
-      <Head>
-        <title>Contacto — ASSYSTU</title>
-        <meta name="description" content="Conversemos y veamos si Happy Brain calza con tu realidad." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      <SEOHead
+        title="Contacto — ASSYSTU"
+        description="Conversemos y veamos si Happy Brain calza con tu realidad."
+        url="/contacto"
+        image="/og/og-contacto.png"
+      />
       <div className="bg-background text-on-background font-body selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
         <Header />
         <main className="pt-24">

@@ -1,17 +1,31 @@
-import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 
 export default function TransformaERP() {
   return (
     <>
-      <Head>
-        <title>TransformaERP — ASSYSTU</title>
-        <meta name="description" content="Mentoría para mejorar la operación y el uso real de tu ERP, sin depender de consultoría tradicional." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      <SEOHead
+        title="TransformaERP — ASSYSTU"
+        description="Mentoría para mejorar la operación y el uso real de tu ERP, sin depender de consultoría tradicional."
+        url="/transformaerp"
+        image="/og/og-transformaerp.png"
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "TransformaERP",
+            provider: { "@type": "Organization", name: "ASSYSTU", url: "https://www.assystu.com" },
+            description: "Mentoría para mejorar la operación y el uso real de tu ERP. Metodología de 3 pilares: Diagnóstico Estructural, Alineación de Procesos y Mentoría de Ejecución.",
+            url: "https://www.assystu.com/transformaerp",
+          }),
+        }}
+      />
       <div className="bg-background text-on-background font-body antialiased">
         <Header />
         <main className="pt-24">

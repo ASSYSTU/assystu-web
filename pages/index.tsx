@@ -1,18 +1,19 @@
-import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { TextRotate } from "@/components/TextRotate";
+import SEOHead from "@/components/SEOHead";
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Método Happy Brain — ASSYSTU</title>
-        <meta name="description" content="Instalamos claridad operacional y un sistema semanal que se sostiene: backlog de 30 días, ritual mínimo y un hub para que la operación no dependa de incendios ni WhatsApp." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      <SEOHead
+        title="Método Happy Brain — ASSYSTU"
+        description="Instalamos claridad operacional y un sistema semanal que se sostiene: backlog de 30 días, ritual mínimo y un hub para que la operación no dependa de incendios ni WhatsApp."
+        url="/"
+        image="/og/og-home.png"
+      />
       <div className="bg-surface font-body text-on-surface">
         <Header />
         <main className="pt-24">

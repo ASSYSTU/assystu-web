@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "qa:redirects": "bash scripts/smoke-redirects.sh",
+    "qa:links": "bash scripts/check-links.sh"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.2.2",

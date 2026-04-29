@@ -54,6 +54,8 @@ export default function TransformaERP() {
                     alt="Arquitectura de resultados operativos"
                     fill
                     className="object-cover"
+                    priority
+                    sizes="(max-width: 768px) 100vw, 42vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent" />
                 </div>

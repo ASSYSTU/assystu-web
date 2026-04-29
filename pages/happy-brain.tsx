@@ -1,10 +1,14 @@
 import { useState } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ServiceModal, { type CapaModalData } from "@/components/ServiceModal";
-import ContactForm from "@/components/ContactForm";
 import SEOHead from "@/components/SEOHead";
+import type { CapaModalData } from "@/components/ServiceModal";
+
+// Lazy load: modal y formulario no son críticos para el primer render
+const ServiceModal = dynamic(() => import("@/components/ServiceModal"), { ssr: false });
+const ContactForm = dynamic(() => import("@/components/ContactForm"));
 
 const capas: Array<{
   num: string;

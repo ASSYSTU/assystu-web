@@ -28,18 +28,18 @@ export default function Document() {
         {/* Preconnect para reducir latencia de Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Material Symbols — carga no bloqueante (display=swap evita esperar al font) */}
+        {/* Material Symbols — preload no bloqueante; display=block evita texto antes de cargar */}
         <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
-          media="print"
+          rel="preload"
+          as="style"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block"
           // @ts-ignore
-          onLoad="this.media='all'"
+          onLoad="this.rel='stylesheet'"
         />
         <noscript>
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block"
           />
         </noscript>
         {/* Google Tag Manager */}

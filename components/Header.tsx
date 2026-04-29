@@ -23,7 +23,6 @@ export default function Header() {
             width={200}
             height={37}
             priority
-            unoptimized
             className="w-36 sm:w-44 md:w-[200px] h-auto"
           />
         </Link>

@@ -173,7 +173,6 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
       <motion.span
         className={cn("flex flex-wrap whitespace-pre-wrap", mainClassName)}
         {...props}
-        layout
         transition={transition}
       >
         <span className="sr-only">{texts[currentTextIndex]}</span>
@@ -188,7 +187,6 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
               "flex flex-wrap",
               splitBy === "lines" && "flex-col w-full"
             )}
-            layout
             aria-hidden="true"
           >
             {(splitBy === "characters"

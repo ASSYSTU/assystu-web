@@ -50,11 +50,10 @@ export default function Contacto() {
               <div className="col-span-12 md:col-span-5 flex items-end justify-end">
                 <div className="w-full aspect-[4/3] rounded-xl overflow-hidden relative">
                   <Image
-                    src="/contacto-hero.png"
+                    src="/contacto-hero.jpg"
                     alt="Conversemos sobre tu operación"
                     fill
                     className="object-cover"
-                    priority
                     sizes="(max-width: 768px) 100vw, 42vw"
                   />
                 </div>

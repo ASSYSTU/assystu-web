@@ -53,7 +53,7 @@ export default function Home() {
               <div className="lg:col-span-5 relative">
                 <div className="aspect-square bg-surface-container-high rounded-full relative overflow-hidden">
                   <Image
-                    src="/hero-desk.png"
+                    src="/hero-desk.jpg"
                     alt="Escritorio organizado que refleja claridad mental"
                     fill
                     className="object-cover"
@@ -167,7 +167,7 @@ export default function Home() {
                 </div>
                 <div className="lg:w-1/2 min-h-[400px] relative">
                   <Image
-                    src="/home-30-days.png"
+                    src="/home-30-days.jpg"
                     alt="Qué cambia en 30 días con el Método Happy Brain"
                     fill
                     className="object-cover"

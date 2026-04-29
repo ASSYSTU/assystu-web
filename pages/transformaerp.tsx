@@ -50,7 +50,7 @@ export default function TransformaERP() {
               <div className="col-span-12 md:col-span-5 relative mt-12 md:mt-0">
                 <div className="aspect-[4/5] rounded-xl overflow-hidden relative">
                   <Image
-                    src="/erp-hero.png"
+                    src="/erp-hero.jpg"
                     alt="Arquitectura de resultados operativos"
                     fill
                     className="object-cover"

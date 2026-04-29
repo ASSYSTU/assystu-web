@@ -28,14 +28,12 @@ export default function Document() {
         {/* Preconnect para reducir latencia de Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Material Symbols — preload no bloqueante; display=block evita texto antes de cargar */}
-        <link
-          rel="preload"
-          as="style"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block"
-          // @ts-ignore
-          onLoad="this.rel='stylesheet'"
-        />
+        {/*
+          Material Symbols — carga async via inline script.
+          onLoad en <link> no funciona en Next.js _document; el script crea el link
+          dinámicamente (no bloqueante). display=block evita mostrar texto de ligatura.
+        */}
+        <script dangerouslySetInnerHTML={{ __html: `(function(){var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block';document.head.appendChild(l)})();` }} />
         <noscript>
           <link
             rel="stylesheet"

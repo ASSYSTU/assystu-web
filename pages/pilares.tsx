@@ -43,7 +43,7 @@ const PILARES = [
     nombre: "Herramientas",
     tagline: "Al servicio del método",
     descripcion:
-      "Al servicio de los procesos, no al revés. Integraciones, plataformas, sistemas que habilitan el método — no lo obstaculizan.",
+      "Al servicio de los procesos, no al revés. Integraciones, plataformas, sistemas que habilitan el método, no lo obstaculizan.",
     pregunta: "¿Sus herramientas apoyan cómo trabajan, o crean más fricción?",
     bg: "bg-[#f5e6c8]",
     text: "text-[#5c4209]",
@@ -227,7 +227,7 @@ export default function Pilares() {
                     Los 4 pilares que hacen que todo funcione
                   </h1>
                   <p className="text-lg md:text-xl text-on-primary/80 leading-relaxed max-w-2xl">
-                    Personas, Procesos, Herramientas e IA. Cuando los cuatro están sanos, se genera una espiral virtuosa donde cada uno potencia al siguiente — y al anterior.
+                    Personas, Procesos, Herramientas e IA. Cuando los cuatro están sanos, se genera una espiral virtuosa donde cada uno potencia al siguiente, y al anterior.
                   </p>
                 </div>
               </FadeIn>
@@ -243,7 +243,7 @@ export default function Pilares() {
                     Los 4 pilares
                   </h2>
                   <p className="text-on-surface-variant max-w-xl mx-auto">
-                    No son etapas que se completan — son dimensiones que se mantienen. Cada persona u organización tiene un nivel de madurez distinto en cada una.
+                    No son etapas que se completan: son dimensiones que se mantienen. Cada persona u organización tiene un nivel de madurez distinto en cada una.
                   </p>
                 </div>
               </FadeIn>
@@ -290,7 +290,7 @@ export default function Pilares() {
                     La espiral virtuosa
                   </h2>
                   <p className="text-on-surface-variant max-w-2xl mx-auto">
-                    Los 4 pilares no son lineales — forman un ciclo que se retroalimenta. La IA amplifica todo lo que hay antes de ella, y eso mejora a las personas, que mejoran sus procesos...
+                    Los 4 pilares no son lineales: forman un ciclo que se retroalimenta. La IA amplifica todo lo que hay antes de ella, y eso mejora a las personas, que mejoran sus procesos...
                   </p>
                 </div>
               </FadeIn>
@@ -332,10 +332,10 @@ export default function Pilares() {
                     El mercado dice &ldquo;mete IA y listo&rdquo;.<br />Happy Brain dice que no.
                   </h2>
                   <blockquote className="text-xl md:text-2xl text-on-surface font-headline italic mb-8 leading-relaxed border-l-4 border-[#e2725b] pl-6">
-                    &ldquo;La IA es el pilar 4, no el pilar 1. Y cuando los 4 pilares están sanos, la IA no es un gasto — es un multiplicador.&rdquo;
+                    &ldquo;La IA es el pilar 4, no el pilar 1. Y cuando los 4 pilares están sanos, la IA no es un gasto, es un multiplicador.&rdquo;
                   </blockquote>
                   <p className="text-on-surface-variant leading-relaxed">
-                    Implementar IA sobre un equipo sin claridad de roles, sin procesos definidos, con herramientas que se usan mal — solo amplifica el caos. El orden importa. El contexto importa. El sistema importa.
+                    Implementar IA sobre un equipo sin claridad de roles, sin procesos definidos, con herramientas que se usan mal, solo amplifica el caos. El orden importa. El contexto importa. El sistema importa.
                   </p>
                 </FadeIn>
               </div>
@@ -386,7 +386,7 @@ export default function Pilares() {
                     <strong className="text-on-primary">Personas → Procesos → Tecnología</strong>.
                   </p>
                   <p className="text-on-primary-container leading-relaxed mb-4">
-                    La IA agrega una 4ª capa que antes no existía. Un ERP era herramienta pasiva — necesitabas a alguien para operar. La IA es un{" "}
+                    La IA agrega una 4ª capa que antes no existía. Un ERP era herramienta pasiva: necesitabas a alguien para operar. La IA es un{" "}
                     <strong className="text-on-primary">amplificador activo</strong> que devuelve valor hacia arriba: mejora los procesos, que mejoran a las personas, que mejoran su uso de las herramientas.
                   </p>
                   <p className="text-on-primary-container leading-relaxed text-sm italic opacity-80">
@@ -409,17 +409,17 @@ export default function Pilares() {
                     Los ERPs nacieron para los procesos de la empresa: finanzas, cadena de suministro, RRHH. Grandes sistemas para estructuras grandes. Costosos, rígidos, diseñados para flujos predecibles.
                   </p>
                   <p className="text-on-surface-variant leading-relaxed mb-5">
-                    Pero el trabajo real de las personas y equipos sucede en otro lado: en reuniones, en el correo, en acuerdos verbales, en documentos dispersos en cinco plataformas distintas. No hay sistema para eso. Las personas construyen <strong className="text-on-surface">puentes mentales</strong> para conectar todo — y ese esfuerzo tiene un costo enorme en energía y tiempo.
+                    Pero el trabajo real de las personas y equipos sucede en otro lado: en reuniones, en el correo, en acuerdos verbales, en documentos dispersos en cinco plataformas distintas. No hay sistema para eso. Las personas construyen <strong className="text-on-surface">puentes mentales</strong> para conectar todo, y ese esfuerzo tiene un costo enorme en energía y tiempo.
                   </p>
                   <p className="text-on-surface leading-relaxed mb-8">
-                    Happy Brain se hace cargo de eso. No de los procesos del ERP — de los <strong>procesos humanos y de equipos</strong> que el ERP nunca tocó.
+                    Happy Brain se hace cargo de eso. No de los procesos del ERP, sino de los <strong>procesos humanos y de equipos</strong> que el ERP nunca tocó.
                   </p>
                   <div className="bg-surface-container rounded-2xl border border-outline-variant/20 p-6">
                     <p className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">
                       Sobre la tecnología
                     </p>
                     <p className="text-sm text-on-surface-variant leading-relaxed">
-                      La primera versión vive en <strong className="text-on-surface">Notion</strong> — no porque Notion sea el destino, sino porque es la mejor plataforma hoy para implementar el método. El día que existan sistemas más específicos, el método migra sin fricción. El método es lo que importa, no la herramienta en que aterriza.
+                      La primera versión vive en <strong className="text-on-surface">Notion</strong>, no porque Notion sea el destino, sino porque es la mejor plataforma hoy para implementar el método. El día que existan sistemas más específicos, el método migra sin fricción. El método es lo que importa, no la herramienta en que aterriza.
                     </p>
                   </div>
                 </FadeIn>
@@ -436,7 +436,7 @@ export default function Pilares() {
                   ¿Cuál es el pilar más débil en tu operación?
                 </h2>
                 <p className="text-lg opacity-90 mb-8 max-w-xl mx-auto relative z-10">
-                  Agenda una sesión de diagnóstico y lo vemos juntos — sin compromiso, sin venta.
+                  Agenda una sesión de diagnóstico y lo vemos juntos, sin compromiso, sin venta.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
                   <Link

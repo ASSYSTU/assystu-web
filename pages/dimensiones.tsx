@@ -29,7 +29,7 @@ const DIMENSIONES: Dimension[] = [
     nombre: "Notas",
     capa: "operativo",
     version: "ambos",
-    descripcion: "Donde cae todo lo que llega — ideas, acuerdos, aprendizajes. La materia prima del sistema.",
+    descripcion: "Donde cae todo lo que llega: ideas, acuerdos, aprendizajes. La materia prima del sistema.",
     ejemploPersonal: "La receta que te pasaron, lo que acordaste con el banco, lo que quieres recordar del libro que estás leyendo.",
     ejemploNegocio: "Los acuerdos de una reunión, el resumen de una llamada con un cliente, las decisiones que no pueden perderse.",
   },
@@ -144,7 +144,7 @@ const CAPAS = [
     id: "evento" as Capa,
     icon: "📅",
     label: "Eventos Comunicacionales",
-    desc: "Lo que ocurre — reuniones y mensajes que generan trabajo.",
+    desc: "Lo que ocurre: reuniones y mensajes que generan trabajo.",
     pregunta: "¿Qué reunión tuvimos? ¿Qué acordamos por WhatsApp?",
     color: "bg-[#fdf0ec] border-[#e2725b]/40",
     dot: "bg-[#e2725b]",
@@ -153,7 +153,7 @@ const CAPAS = [
     id: "operativo" as Capa,
     icon: "⚡",
     label: "Documentos Operativos",
-    desc: "Lo que se hace y lo que se registra — tareas y notas.",
+    desc: "Lo que se hace y lo que se registra: tareas y notas.",
     pregunta: "¿Qué tengo que hacer? ¿Qué aprendí? ¿Qué acordamos?",
     color: "bg-[#f0edeb] border-[#c3c8c1]",
     dot: "bg-[#434843]",
@@ -170,7 +170,7 @@ const SCENARIOS = [
     con_hb: [
       { dim: "💬 Mensaje", accion: "El WhatsApp entra al sistema vinculado a la obra correspondiente" },
       { dim: "✅ Tarea", accion: "Se genera una tarea para el capataz con fecha y contexto completo" },
-      { dim: "📝 Nota", accion: "La decisión queda registrada — quién la tomó, cuándo, y por qué" },
+      { dim: "📝 Nota", accion: "La decisión queda registrada: quién la tomó, cuándo, y por qué" },
       { dim: "🎯 Proyecto", accion: "La obra tiene historial completo de cambios y acuerdos" },
     ],
     resultado: "La próxima reunión de obra parte con todos informados, sin tener que reconstruir qué pasó.",
@@ -184,7 +184,7 @@ const SCENARIOS = [
     con_hb: [
       { dim: "🤝 Reunión", accion: "La sesión queda registrada con acuerdos y participantes" },
       { dim: "💼 Oportunidad", accion: "El proceso de selección entra al pipeline con su contexto" },
-      { dim: "✅ Tareas", accion: "El equipo sabe qué sigue — sin depender de que el socio recuerde" },
+      { dim: "✅ Tareas", accion: "El equipo sabe qué sigue, sin depender de que el socio recuerde" },
       { dim: "👥 Persona", accion: "El historial con ese cliente está completo y accesible" },
     ],
     resultado: "La IA puede responder '¿qué acordamos con ese cliente?' al instante, porque la información está donde tiene que estar.",
@@ -199,7 +199,7 @@ const SCENARIOS = [
       { dim: "👥 Persona", accion: "Cada paciente es una persona con su historial" },
       { dim: "✅ Tareas", accion: "Los seguimientos tienen fecha y están asignados" },
       { dim: "📝 Notas", accion: "Los acuerdos de cada consulta quedan registrados" },
-      { dim: "🗂️ Área", accion: "Todo bajo el Área 'Consulta Médica' — sin mezclar con el resto" },
+      { dim: "🗂️ Área", accion: "Todo bajo el Área 'Consulta Médica', sin mezclar con el resto" },
     ],
     resultado: "Entra al próximo control con contexto completo. Sin buscar, sin improvisar.",
   },
@@ -210,12 +210,12 @@ const SCENARIOS = [
     titulo: "Papá organizando las vacaciones de verano",
     antes: "Cotizaciones en el correo, ideas de los chicos en WhatsApp, las fechas del colegio en la agenda del teléfono y el presupuesto en la cabeza. Cuando alguien pregunta '¿qué falta?', la respuesta tarda diez minutos.",
     con_hb: [
-      { dim: "🎯 Proyecto", accion: "'Vacaciones Verano 2026' — todo el viaje en un solo lugar" },
+      { dim: "🎯 Proyecto", accion: "'Vacaciones Verano 2026': todo el viaje en un solo lugar" },
       { dim: "📝 Notas", accion: "Cada cotización, idea y acuerdo familiar queda registrado" },
       { dim: "✅ Tareas", accion: "Lo que falta, con fecha y con quién lo hace" },
       { dim: "👥 Personas", accion: "La agencia, el hotel, las personas de contacto del viaje" },
     ],
-    resultado: "Cuando alguien pregunta '¿qué falta?', la respuesta está en un solo lugar — no en tu cabeza.",
+    resultado: "Cuando alguien pregunta '¿qué falta?', la respuesta está en un solo lugar, no en tu cabeza.",
   },
   {
     id: "estudiante",
@@ -256,7 +256,7 @@ const COPE_STEPS = [
     letra: "P",
     nombre: "Planificar",
     icon: "event_note",
-    desc: "Con todo conectado, planificar es fácil y con foco. Ves lo que importa sin tener que recordar — el sistema te lo muestra.",
+    desc: "Con todo conectado, planificar es fácil y con foco. Ves lo que importa sin tener que recordar: el sistema te lo muestra.",
     color: "text-[#314865]",
     bg: "bg-[#e8eff9]",
     border: "border-[#b0c8eb]",
@@ -355,7 +355,7 @@ const GRAPH_EXAMPLES = [
     id: "consulta",
     tipo: "personal" as const,
     label: "🩺 Consulta médica",
-    desc: "Una visita al médico activa 5 dimensiones y deja registro automático de todo — sin esfuerzo extra.",
+    desc: "Una visita al médico activa 5 dimensiones y deja registro automático de todo, sin esfuerzo extra.",
     activeNodes: ["personas", "areas", "proyectos", "notas", "tareas"],
     activeEdges: [["proyectos","notas"],["proyectos","tareas"],["areas","notas"],["personas","notas"],["personas","tareas"]] as [string,string][],
   },
@@ -371,7 +371,7 @@ const GRAPH_EXAMPLES = [
     id: "reunion-cliente",
     tipo: "negocio" as const,
     label: "🤝 Reunión con cliente",
-    desc: "Una reunión vinculada a una oportunidad genera notas, tareas y mensajes de seguimiento — sin depender de la memoria de nadie.",
+    desc: "Una reunión vinculada a una oportunidad genera notas, tareas y mensajes de seguimiento, sin depender de la memoria de nadie.",
     activeNodes: ["personas", "oportunidades", "reuniones", "mensajes", "notas", "tareas"],
     activeEdges: [["personas","reuniones"],["personas","mensajes"],["oportunidades","reuniones"],["reuniones","notas"],["reuniones","tareas"],["mensajes","notas"]] as [string,string][],
   },
@@ -637,7 +637,7 @@ export default function Dimensiones() {
   return (
     <>
       <SEOHead
-        title="Cómo funciona Happy Brain — Las dimensiones del sistema"
+        title="Cómo funciona Happy Brain: Las dimensiones del sistema"
         description="Conoce las 8 y 12 dimensiones de Happy Brain, cómo se relacionan y por qué eso cambia la forma en que organizas tu vida o tu negocio."
         url="/dimensiones"
       />
@@ -673,7 +673,7 @@ export default function Dimensiones() {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 Happy Brain organiza lo que sabes, lo que haces y lo que te llega en un solo sistema conectado.
-                Acá te mostramos cómo funciona por dentro — dimensión por dimensión.
+                Acá te mostramos cómo funciona por dentro, dimensión por dimensión.
               </motion.p>
               <motion.div
                 className="flex flex-wrap gap-4"
@@ -700,7 +700,7 @@ export default function Dimensiones() {
                   Todo Happy Brain se organiza en 3 grupos
                 </h2>
                 <p className="text-on-surface-variant text-base max-w-xl mb-12">
-                  Antes de ver las dimensiones, conviene entender su rol. Cada dimensión vive en uno de estos grupos — y eso determina cómo se conecta con el resto.
+                  Antes de ver las dimensiones, conviene entender su rol. Cada dimensión vive en uno de estos grupos, y eso determina cómo se conecta con el resto.
                 </p>
               </FadeIn>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -843,7 +843,7 @@ export default function Dimensiones() {
                   Lo que cambia cuando todo está conectado
                 </h2>
                 <p className="text-on-surface-variant text-base max-w-xl mb-10">
-                  Situaciones concretas — antes y después de tener el sistema.
+                  Situaciones concretas: antes y después de tener el sistema.
                 </p>
               </FadeIn>
 
@@ -938,7 +938,7 @@ export default function Dimensiones() {
               <FadeIn>
                 <span className="font-label text-xs uppercase tracking-widest text-on-tertiary-container font-bold mb-3 block">El método</span>
                 <h2 className="font-headline text-3xl lg:text-4xl font-bold text-primary mb-3 leading-tight">
-                  COPE — el motor que hace que todo funcione
+                  COPE: el motor que hace que todo funcione
                 </h2>
                 <p className="text-on-surface-variant text-base max-w-xl mb-12">
                   Las dimensiones son las piezas. COPE es lo que las puebla, las vincula y hace que te entreguen valor cuando lo necesitas. Sin el método, las piezas son solo estructura vacía.
@@ -969,7 +969,7 @@ export default function Dimensiones() {
                 <div className="mt-8 bg-surface-container-low rounded-2xl border border-outline-variant/20 p-6 flex flex-col md:flex-row items-center gap-4">
                   <span className="material-symbols-outlined text-4xl text-on-tertiary-container shrink-0">lightbulb</span>
                   <p className="text-on-surface-variant text-sm leading-relaxed">
-                    <strong className="text-primary">La clave no es aplicar las 4 etapas de forma perfecta.</strong> Es que cuando el sistema está conectado, el foco aparece solo — sin tener que recordar, sin tener que buscar. COPE es el hábito que mantiene el sistema vivo.
+                    <strong className="text-primary">La clave no es aplicar las 4 etapas de forma perfecta.</strong> Es que cuando el sistema está conectado, el foco aparece solo, sin tener que recordar, sin tener que buscar. COPE es el hábito que mantiene el sistema vivo.
                   </p>
                 </div>
               </FadeIn>
@@ -1048,9 +1048,9 @@ export default function Dimensiones() {
                     </div>
                     <span className="text-3xl mb-3 relative">🧠</span>
                     <h3 className="font-headline text-xl font-bold text-primary mb-2 relative">Plantilla Happy Brain</h3>
-                    <p className="text-sm font-bold text-on-tertiary-container mb-4 relative">Sistema completo · 8 dimensiones</p>
+                    <p className="text-sm font-bold text-on-tertiary-container mb-4 relative">Sistema completo · 8 dimensiones · USD 49</p>
                     <p className="text-on-surface-variant text-sm leading-relaxed flex-1 relative">
-                      Lo que M1 + M2 + M3 ofrecen por separado, integrado en un solo sistema — con las 8 dimensiones conectadas y agentes IA incluidos.
+                      Lo que M1 + M2 + M3 ofrecen por separado, integrado en un solo sistema, con las 8 dimensiones conectadas y agentes IA incluidos.
                     </p>
                     <div className="mt-4 flex flex-wrap gap-1 mb-6 relative">
                       {DIMENSIONES.filter((d) => d.version === "ambos").map((d) => (
@@ -1059,6 +1059,7 @@ export default function Dimensiones() {
                         </span>
                       ))}
                     </div>
+                    {/* CTA principal */}
                     <a
                       href="https://assystu.flycrew.com/e/ec7ebc33a4218ec0/register"
                       target="_blank"
@@ -1067,6 +1068,32 @@ export default function Dimensiones() {
                     >
                       Obtener la plantilla <span className="material-symbols-outlined text-sm align-middle ml-1">open_in_new</span>
                     </a>
+                    {/* Upsell */}
+                    <div className="mt-4 pt-4 border-t border-outline-variant/20">
+                      <p className="text-[11px] font-semibold text-on-surface-variant/50 uppercase tracking-wide mb-2">
+                        ¿Quieres acompañamiento?
+                      </p>
+                      <div className="space-y-1">
+                        <a
+                          href="https://assystu.flycrew.com/e/0899a64bc978de4c/register"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-between w-full text-sm text-primary hover:bg-surface-container rounded-lg px-3 py-2 transition-colors group"
+                        >
+                          <span>Sesión 1:1 de Diagnóstico</span>
+                          <span className="text-xs text-on-surface-variant/50 group-hover:text-primary transition-colors font-medium">USD 100 →</span>
+                        </a>
+                        <a
+                          href="https://assystu.flycrew.com/e/2f82af702d258bfc/register"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-between w-full text-sm text-primary hover:bg-surface-container rounded-lg px-3 py-2 transition-colors group"
+                        >
+                          <span>Pack 5 sesiones</span>
+                          <span className="text-xs text-on-surface-variant/50 group-hover:text-primary transition-colors font-medium">USD 500 →</span>
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </FadeIn>
 
@@ -1080,20 +1107,39 @@ export default function Dimensiones() {
                     <h3 className="font-headline text-xl font-bold text-primary mb-2">Happy Brain Negocio</h3>
                     <p className="text-sm font-bold text-on-tertiary-container mb-4">12 dimensiones · Con mentoría</p>
                     <p className="text-on-surface-variant text-sm leading-relaxed flex-1">
-                      Para equipos medianos y empresas. Suma Metas, Reuniones, Mensajes y Oportunidades. Requiere acompañamiento — el sistema solo no es suficiente cuando hay un equipo que debe cambiar cómo opera.
+                      Para equipos medianos y empresas. Suma Metas, Reuniones, Mensajes y Oportunidades. Requiere acompañamiento: el sistema solo no es suficiente cuando hay un equipo que debe cambiar cómo opera.
                     </p>
-                    <div className="mt-4 flex flex-wrap gap-1 mb-6">
+                    <div className="mt-4 flex flex-wrap gap-1 mb-5">
                       {DIMENSIONES.filter((d) => d.version === "negocio").map((d) => (
                         <span key={d.nombre} className="text-[10px] bg-[#fdf0ec] text-[#802918] px-2 py-0.5 rounded-full">
                           {d.icon} {d.nombre}
                         </span>
                       ))}
                     </div>
+                    {/* Programas disponibles */}
+                    <div className="pt-4 border-t border-outline-variant/20 mb-5">
+                      <p className="text-[11px] font-semibold text-on-surface-variant/50 uppercase tracking-wide mb-2">
+                        Programas disponibles
+                      </p>
+                      <div className="space-y-2">
+                        {[
+                          { nombre: "Blueprint", desc: "Diagnóstico + plan 30 días" },
+                          { nombre: "Mentoring 4W", desc: "Implementación guiada" },
+                          { nombre: "Mentoring 6M", desc: "Transformación sostenida" },
+                        ].map((p) => (
+                          <div key={p.nombre} className="flex items-start gap-2 text-sm">
+                            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#e2725b]/50 flex-shrink-0" />
+                            <span className="text-on-surface font-medium">{p.nombre}</span>
+                            <span className="text-on-surface-variant/60 text-xs mt-0.5">{p.desc}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                     <Link
-                      href="/contacto"
+                      href="/happy-brain#programas"
                       className="block text-center border border-[#e2725b]/40 text-[#802918] px-5 py-3.5 rounded-xl font-bold text-sm hover:bg-[#fdf0ec] transition-colors"
                     >
-                      Consultar por HB Negocio
+                      Ver los programas Happy Brain
                     </Link>
                   </div>
                 </FadeIn>
